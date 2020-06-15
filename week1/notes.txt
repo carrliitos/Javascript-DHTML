@@ -1,0 +1,94 @@
+## GETTING STARTED
+JavaScript - getting started
+	- JS programs are a sequence of statements on instructions that are run by a web browser in the order they are written
+	- Any text editor can write/run JS files -- only a web browser is needed to run the script
+	- JS code can be embedded in HTML document or saved in a separate file and can be linked to an HTML file
+	- JS code in an HTMl file must be inserted between <script></script> tags and can be put in the <body> and <head> tags
+How to create JS Programs
+	- Any text editor can be used
+	- Embedded JS code in HTMl -- must be inserted between <script></script> tags
+	Example 1:
+	<script>
+		alert("Hello World!"); // alert command instructs the browser to display a message box that contains the text between the quotation marks
+	</script>
+
+	Example 2:
+	<script>
+		document.write("Hello World!");
+	</script>
+
+## Basic JavaScript Instructions
+Data Types
+	- Boolean
+	- Numbers
+	- Text
+	- Undefined
+	- Null
+	- Objects
+Variables
+	- The words var or let are used to create a new variable
+		- let statement declares a block scope local variable, optionally initializing it to a value
+		- The scope of a variable declared with var is its current execution context, which is either:
+			a) the enclosing function, if it is declared inside a function, or 
+			b) global scope if it is declared outside of any function.
+	- Syntax:
+		var variable_name;
+		var variable_name = value;
+		let variable_name = value;
+	
+	- We may also use const to create a constant
+	- Syntax: 
+		const constant_name = value;
+	- constants are block-scoped, much like variables defined using the let statement. The value of a constant cannot change through re-assignment, and it cant be redeclared
+Expressions
+	- Two types of expressions:
+		- assignment operation
+		let quantity = 5;
+		const taxRate = 0.05;
+		const title = "Intro to Programming";
+		- mathematical operations
+		const total = quantity * pricePerItems;
+Operators
+	- Assignment operators
+	- Arithmetic operators
+	- String operators
+	- Comparison operators
+	- Logical operators
+Comments
+	// Single line comment
+	/* Block Comment */
+
+Changing the value of a variable
+	- You can do re-assignments on a variable
+Empty Values
+	- null and undefined are used to denote the absence of a meaningful value
+Automatic Type Conversion
+	2 * null = 0; // The null becomes 0, and so the result is 0
+	"1" + 1 = "11"; // String concatention
+	"1" - 1 = 0; // The "1" becomes a 1, so the answer is 0
+	"one" * 1 = NaN; // The string "one" cannot be converted to a string, so we get NaN(Not a Number)
+
+Debugging JavaScript Programs
+Chrome
+    Open the browser.
+    From the menu, select "More tools".
+    From tools, choose "Developer tools".
+    Finally, select Console.
+Firefox
+    Open the browser.
+    From the menu, select "Web Developer".
+    Finally, select "Web Console".
+Edge
+    Open the browser.
+    From the menu, select "Developer Tools".
+    Finally, select "Console".
+Opera
+    Open the browser.
+    From the menu, select "Developer".
+    From "Developer", select "Developer tools".
+    Finally, select "Console".
+Safari
+    Go to Safari, Preferences, Advanced in the main menu.
+    Check "Enable Show Develop menu in menu bar".
+    When the new option "Develop" appears in the menu:
+    Choose "Show Error Console".
