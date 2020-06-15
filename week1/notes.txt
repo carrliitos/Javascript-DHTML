@@ -58,7 +58,7 @@ Comments
 	// Single line comment
 	/* Block Comment */
 
-Changing the value of a variable
+## Changing the value of a variable
 	- You can do re-assignments on a variable
 Empty Values
 	- null and undefined are used to denote the absence of a meaningful value
@@ -68,7 +68,7 @@ Automatic Type Conversion
 	"1" - 1 = 0; // The "1" becomes a 1, so the answer is 0
 	"one" * 1 = NaN; // The string "one" cannot be converted to a string, so we get NaN(Not a Number)
 
-Debugging JavaScript Programs
+## Debugging JavaScript Programs
 Chrome
     Open the browser.
     From the menu, select "More tools".
@@ -92,3 +92,26 @@ Safari
     Check "Enable Show Develop menu in menu bar".
     When the new option "Develop" appears in the menu:
     Choose "Show Error Console".
+
+## Decisions, decisions
+- Basic conditional statements are similar to that of Java, and I'm guessing every other language -- the syntax are the only ones that are different -- duh!
+- Basic loop statements are similar to that of Java, and I'm guessing every other language -- the syntax are the only ones that are different -- duh!
+
+## Arrays
+- Array assignment is also similar to Java
+	const listOfNumbers = [1, 2, 3, 4, 5, 6, 7, 8];
+	- Except there are built-in methods:
+	push() method -- adds an element to the array
+	listOfNumers.push(value);
+	pop() method -- removes the last value
+	listOfNumber.pop(); // removes 8
+
+## Functions
+- Functions are similar to methods, which are a set of instructions that perform a specific task
+- difference between functions and methods is that a method is associated with an object, while a function is not
+
+function displayMessage() {
+	console.log("Have an awesome day of programming!");
+}
+
+- parameters -- arguments needed for that particular functions -- concept is still similar to Java and any other programming language
