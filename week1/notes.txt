@@ -114,4 +114,21 @@ function displayMessage() {
 	console.log("Have an awesome day of programming!");
 }
 
-- parameters -- arguments needed for that particular functions -- concept is still similar to Java and any other programming language
+Parameters
+	- arguments needed for that particular functions -- concept is still similar to Java and any other programming language
+Anonymous Functions
+	- A function with no name
+	- If we place an anonymous function where the interpreter would expect to see an expression, then it is evaluated as an expression, and is called a function expression
+	- Example
+
+		const calcArea = function(length, width) {
+			return length * width;
+		}
+
+Immediately Invoked Functions Expressions (IIFE)
+	- A way to execute anonymous functions once as the interpreter comes across them is by adding the final parentheses after the curly braces
+	- Example
+
+		cont variable = function() {
+
+		}(); // the curly braces tells the interpreter to invoke the function immediately
