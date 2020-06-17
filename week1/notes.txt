@@ -115,3 +115,51 @@ function displayMessage() {
 }
 
 - parameters -- arguments needed for that particular functions -- concept is still similar to Java and any other programming language
+
+## Objects - Concepts are similar to OOP for Java, or any other language
+1. Defining Objects Using Literal Notation
+	- Objects consists of Key/Value pairs, 
+	- syntax:
+	var objectName = {
+		key1: value1,
+		key2: value2,
+		...
+		methodName: function() { ... }
+	}
+	- Example:
+	let monthlySales = {
+		month: "January",
+		category: "TV",
+		numItems: 10,
+		cost: 200,
+		sellingPrice: 300,
+		calculateProfit: function() {
+			return this.numItems*(this.sellingPrice - this.cost);
+		}
+	};
+	- Use dot notation to access properties.
+2. Defining Objects Using Constructor Notation
+	- Use new keyword
+	- Example:
+	let monthlySales = new Object();
+	monthlySales.month = "January",
+	monthlySales.category = "TV",
+	monthlySales.numItems = 20,
+	monthlySales.cost = 200,
+	monthlySales.sellingPrice = 300,
+	monthlySales.calculateProfit = function() {
+		return this.numItems*(this.sellingPrice - this.cost);
+	};
+3. To delete a property, use delete keyword
+	- Example:
+	delete monthlySale.numItems;
+4. Creating Many Objects
+	- Syntax:
+	function constructorFunctionName(valueOne, valueTwo, ...) {
+		this.propertyOne = valueOne;
+		this.propertyTwo = valueTwo;
+		...
+		this.methodOne = function() {
+			// statements
+		}
+	}
