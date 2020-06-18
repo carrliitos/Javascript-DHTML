@@ -183,4 +183,3 @@ Immediately Invoked Functions Expressions (IIFE)
 		cont variable = function() {
 
 		}(); // the curly braces tells the interpreter to invoke the function immediately
->>>>>>> a49f345d35061d02068f898863381e05f068ef95
