@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculating Rectangle Perimeters</title>
+</head>
+<body>
+	<h2>Calculating Perimeters</h2>
+	<table>
+		<tr>
+			<td>Enter Length:</td>
+			<td><input type="text" id="length" placeholder="Enter length" value="0"></td>
+		</tr>
+		<tr>
+			<td>Enter Width:</td>
+			<td><input type="text" id="width" placeholder="Enter width" value="0"></td>
+		</tr>
+	</table>
+	<p><button type="button" id="calcPerimeter">Calculate Perimeter!</button></p>
+	<p id="result"></p>
+
+	<!-- Script for calculating the perimeter -->
+	<script>
+		// define the function
+		function calcPerimeter() {
+			// Declare variables
+			const length = document.querySelector("#length").value;
+			const width = document.querySelector("#width").value;
+
+			// Calculate
+			const perimeter = 2 * (parseFloat(length) + parseFloat(width)); // If we dont want concatenation, we need to convert each variable to a number by calling parseFloat()
+
+			// Display output
+			document.querySelector("#result").textContent = "Perimeter of your rectangle: " + perimeter;
+		}
+
+		// Define the event handler
+		document.querySelector("#calcPerimeter").onclick = calcPerimeter;
+	</script>
+</body>
+</html>

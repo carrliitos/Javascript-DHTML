@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Page title </title>
+</head>
+
+<body>
+<h2>Calculate Area</h2>
+<table>
+	<tr>
+		<td>Length: </td>
+		<td><input type='text' id='boxLength' placeholder='Enter length' value='0'></td>
+	</tr>
+	<tr>
+		<td>Width: </td>
+		<td><input type='text' id='boxWidth' placeholder='Enter width' value='0'></td>
+	</tr>
+</table>
+<p><button type='button' id='calcArea'>Calculate Area</button></p>
+
+<p id='result'></p>
+<script>
+  /* This script  calculates and displays area of a rectangle */
+
+  // define an event listener
+  function caclArea(){
+	
+	/*
+		Step 1: declare block-level variables and assign values to variables
+	*/
+	
+	
+	// read 'length' of the box using the ID attribute of the text element
+	const boxLength = document.querySelector('#boxLength').value;
+	
+	
+	// read 'width' of the box using the ID attribute of the text element
+	const boxWidth = document.querySelector('#boxWidth').value;
+	
+	/*
+		Step 2. process data
+	*/
+	
+	// calculate area
+	const boxArea = boxLength*boxWidth;
+	
+	
+	/*
+		Step 3. Display output
+	*/
+
+
+	// display area using 'textContent' attribute of a selected HTML element
+
+	 document.querySelector('#result').textContent =   'Area of the rectangle is ' + boxArea;
+  }
+  
+  // Define event handler
+  document.querySelector('#calcArea').onclick = caclArea;
+
+</script>
+
+</body>
+</html>
