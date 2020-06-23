@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Order Form</title>
+</head>
+<body>
+	<h1>Online Order Form</h1>
+	<h2>List of Items</h2>
+	<form>
+		<table>
+			<tr>
+				<th>Product</th>
+				<th>Unit Price</th>
+				<th>Quantity</th>
+			</tr>
+			<tr>
+	            <td class="fruit">
+	                <p>Apples</p>
+	            </td>
+	            <td class="price">
+	                <p class="fruitprice" id="apple-price">$1.25</p>
+	            </td>
+	            <td class="quantity">
+	                <input type="text" id="applequantity" value="0" /><br />
+	            </td>
+			</tr>
+			<tr>
+	            <td class="fruit">
+	                <p>Oranges</p>
+	            </td>
+	            <td class="price">
+	                <p class="fruitprice" id="orange-price">$0.65</p>
+	            </td>
+	            <td class="quantity">
+	                <input type="text" id="orangequantity" value="0" /><br />
+	            </td>
+			</tr>
+			<tr>
+	            <td class="fruit">
+	                <p>Mangoes</p>
+	            </td>
+	            <td class="price">
+	                <p class="fruitprice" id="mango-price">$1.25</p>
+	            </td>
+	            <td class="quantity">
+	                <input type="text" id="mangoquantity" value="0" /><br />
+	            </td>
+			</tr>						
+		</table>
+
+		<button type='button' id="order">Order</button>
+		<button type='reset'>Reset</button>
+
+		<p id="totalItems"></p>
+		<p id="subTotal"></p>
+		<p id="tax"></p>
+		<p id="totalAmount"></p>
+		
+		<script>
+			// Define a function to invoke when the "Order" button is pressed
+			function orderTotals() {
+				// Read the quantities of each fruits
+				const apple = document.querySelector("#applequantity").value;
+				const orange = document.querySelector("#orangequantity").value;
+				const mango = document.querySelector("#mangoquantity").value;
+
+				// Calculate the totals
+				const totalItems = +apple + +orange + +mango;
+				var	subTotal = (+apple * 1.25) + (+orange * 0.65) + (+mango * 1.25);
+				var tax = subTotal * 0.05;
+				var totalAmount = subTotal + tax;
+
+				// Update the text content of the p element that has the id="result"
+				document.querySelector("#totalItems").textContent = "Total Items: " + totalItems;
+				document.querySelector("#subTotal").textContent = "Sub Total: $" + subTotal.toFixed(2);
+				document.querySelector("#tax").textContent = "5% taxes: $" + tax.toFixed(2);
+				document.querySelector("#totalAmount").textContent = "Total Amount: $" + totalAmount.toFixed(2);
+			}
+
+			document.querySelector("#order").onclick = orderTotals;
+		</script>
+	
+	</form>
+
+</body>
+</html>
