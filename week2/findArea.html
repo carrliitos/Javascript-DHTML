@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Area</title>
+</head>
+<body>
+	<h2>Finding the Area of a Rectangle</h2>
+	<table>
+		<tr>
+			<td>Length:</td>
+			<td><input type="text" id="boxLength" placeholder="Enter a value" value="0"></td>
+		</tr>
+		<tr>
+			<td>Width:</td>
+			<td><input type="text" id="boxWidth" placeholder="Enter a value" value="0"></td>
+		</tr>
+	</table>
+	
+	<p><button type="button" id="calcArea">Calculate Area</button></p>
+	<p id="result"></p>
+
+	<script>
+		// read values
+		function readValues() {
+			const length = document.querySelector("#boxLength").value;
+			const width = document.querySelector("#boxWidth").value;
+
+			const validData = validateInputs(length, width);
+
+			if(validData) {
+				displayResults(length, width);
+			}else {
+				document.querySelector("#result").textContent = "Error: Inputs must be between 0 and 100 for both inputs.";
+			}
+		}
+
+		// validate values
+		function validateInputs(boxLength, boxWidth) {
+			if(boxLength < 0 || boxLength > 100) {
+				return false;
+			}else if(boxWidth < 0 || boxWidth > 100) {
+				return false;
+			}else {
+				return true;
+			}
+		}
+
+		// display results
+		function displayResults(boxLength, boxWidth) {
+			const area = product(boxLength, boxWidth);
+			document.querySelector("#result").textContent = "Area of your reactangle: " + area;
+		}
+
+		// calculate
+		function product(x, y) {
+			return x * y;
+		}
+		
+		document.querySelector("#calcArea").onclick = readValues;
+	</script>
+	
+</body>
+</html>

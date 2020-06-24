@@ -22,7 +22,9 @@
 <p><button type='button' id='calcArea'>Calculate Area</button></p>
 
 <p id='result'></p>
-<script>
+
+<!-- This script uses user-defined stuff -->
+<!-- <script>
   /* This script  calculates and displays area of a rectangle */
 
   // define an event listener
@@ -61,7 +63,28 @@
   // Define event handler
   document.querySelector('#calcArea').onclick = caclArea;
 
+</script> -->
+
+<!-- This cript uses conditional statements -->
+<script>
+	function calculateArea() {
+		const boxLength = document.querySelector("#boxLength").value;
+		const boxWidth = document.querySelector("#boxWidth").value;
+
+		// length must be between 0 and 100
+		if(boxLength < 0 || boxLength > 100) {
+			document.querySelector("#result").textContent = "Invalid length, please enter a valid length";
+		}else if(boxWidth < 0 || boxWidth > 100) {
+			document.querySelector("#result").textContent = "Invalid width, please enter a valid width";
+		}else {
+			const area = boxLength * boxWidth;
+			document.querySelector("#result").textContent = "Area of the rectangle: " + area;
+		}
+	}
+
+	document.querySelector("#calcArea").onclick = calculateArea;
 </script>
+
 
 </body>
 </html>

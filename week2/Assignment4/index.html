@@ -1,0 +1,113 @@
+<!-- Benzon Carlitos Salazar
+	CS381 - Assignment 4 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Online Order Form</title>
+</head>
+<body>
+	<h1>Online Order Form</h1>
+	<h2>List of Items</h2>
+	<table>
+		<tr>
+			<th>Product</th>
+			<th>Unit Price</th>
+			<th>Quantity</th>
+		</tr>
+		<tr>
+			<td class="fruit">
+				<p>Apples</p>
+			</td>
+			<td class="price">
+				<p class="fruitprice" id="apple-price">$1.25</p>
+			</td>
+			<td>
+				<input type="text" id="applequantity" value="0">
+			</td>
+		</tr>
+		<tr>
+			<td class="fruit">
+				<p>Oranges</p>
+			</td>
+			<td class="price">
+				<p class="fruitprice" id="orange-price">$0.65</p>
+			</td>
+			<td>
+				<input type="text" id="orangequantity" value="0">
+			</td>
+		</tr>
+		<tr>
+			<td class="fruit">
+				<p>Mangoes</p>
+			</td>
+			<td class="price">
+				<p class="fruitprice" id="mango-price">$1.25</p>
+			</td>
+			<td>
+				<input type="text" id="mangoquantity" value="0">
+			</td>
+		</tr>
+	</table>
+
+	<button id="order" type="button">Order</button>
+	<button type="reset">Reset</button>
+
+	<p id="errorResult"></p>
+	<p id="totalItems"></p>
+	<p id="subTotal"></p>
+	<p id="tax"></p>
+	<p id="totalAmount"></p>
+	<p id="thankYou"></p>
+	
+	<!-- Calculations -->
+	<script>
+		// read values
+		function readValues() {
+			const apples = document.querySelector("#applequantity").value;
+			const oranges = document.querySelector("#orangequantity").value;
+			const mangoes = document.querySelector("#mangoquantity").value;
+
+			const validData = validate(apples, oranges, mangoes);
+			if(validData) {
+				displayResults(apples, oranges, mangoes);
+			}else {
+				document.querySelector("#errorResult").textContent = "Error. We have a limit of at least an item and nothing greater than 20 items for each item. Sorry.";
+			}
+		}
+		
+		// validate data -- each quantity must be between 0 and 20
+		function validate(apples, oranges, mangoes) {
+			if(apples < 0 || apples > 20) {
+				return false;
+			}else if(oranges < 0 || oranges > 20) {
+				return false;
+			}else if(mangoes < 0 || mangoes > 20) {
+				return false;
+			}else {
+				return true;
+			}
+		}
+
+		// calculate and display results
+		function displayResults(apples, oranges, mangoes) {
+			const totalItems = parseInt(apples) + parseInt(oranges) + parseInt(mangoes);
+			var subTotal = (parseInt(apples) * 1.25) + (parseInt(oranges) * 0.65) + (parseInt(mangoes) * 1.25);
+			var tax = subTotal * 0.05;
+			var totalAmount = subTotal + tax;
+
+			document.querySelector("#totalItems").textContent = "Total Items: " + totalItems;
+			document.querySelector("#subTotal").textContent = "Sub Total: $" + subTotal.toFixed(2);
+			document.querySelector("#tax").textContent = "5% taxes: $" + tax.toFixed(2);
+			document.querySelector("#totalAmount").textContent = "Total Amount: $" + totalAmount.toFixed(2);
+			
+			document.querySelector("#thankYou").textContent = "Thank you for your business. Come again!";
+		}
+
+		document.querySelector("#order").onclick = readValues;
+
+	</script>
+</body>
+</html>
