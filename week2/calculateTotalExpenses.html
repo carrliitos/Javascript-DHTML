@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+ 	<!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculating Total Expenses</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Rent/Mortgage:</td>
+			<td>$<input type="text" name="mortgageValue" id="rent" placeholder="Enter rent/mortgage" value="0"></td>
+		</tr>
+		<tr>
+			<td>Utilitites:</td>
+			<td>$<input type="text" name="utilitiesValue" id="utilities" placeholder="Enter utilities" value="0"></td>
+		</tr>
+	</table>
+	<p><button type="button" id="calcExpenses1">Calculate Expenses</button>(Incorrect implementation)</p>
+	<p><button type="button" id="calcExpenses2">Calculate Expenses</button>(Correct implementation)</p>
+	<p id="result"></p>
+
+	<!-- Calculations -->
+	<script type="text/javascript">
+		// define an event listener
+		function calcExpenses1() {
+			// Declare block-level variables and assign values
+			const rent = document.querySelector("#rent").value;
+			const utilities = document.querySelector("#utilities").value;
+
+			// Process data
+			const totalExpenses = rent + utilities;
+
+			document.querySelector("#result").textContent = "Total Expenses: $" + totalExpenses;
+		}
+
+		function calcExpenses2() {
+			// Declare block-level variables and assign values
+			const rent = document.querySelector("#rent").value;
+			const utilities = document.querySelector("#utilities").value;
+
+			// Process data
+			const totalExpenses = parseInt(rent) + parseInt(utilities);
+
+			document.querySelector("#result").textContent = "Total Expenses: $" + totalExpenses;			
+		}
+
+		// Call your functions
+		document.querySelector("#calcExpenses1").onclick = calcExpenses1;
+		document.querySelector("#calcExpenses2").onclick = calcExpenses2;
+	</script>
+
+</body>
+</html>
