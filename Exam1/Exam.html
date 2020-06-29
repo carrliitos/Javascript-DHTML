@@ -1,0 +1,220 @@
+<!--
+	Benzon Carlitos Salazar 
+	Exam 1 - June 28, 2020 
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Exam I </title>
+ <!-- Include bootstrap CSS -->
+ <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<style type="text/css">
+ table { margin-left: 30px; border: 1px solid black; border-collapse: collapse; background: #879CAD; }
+ th, td { border: 1px solid black; padding: .2em .7em;  text-align: right; color: #fff;
+ 		font-size: 16px; font-weight: bold; } thead { background-color: #1A466A; color: #fff; font-weight: bold;  }
+ input[type=text] { text-align: right; width: 100px; color: #000;}
+ .row { margin: 0;}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</head>
+<body>
+<div class='container-fluid'
+<form name="testForm">
+
+
+<!-- Problem 1 -->
+<h3>Problem 1: Calculate Car Rental Cost</h3>
+<div class='row'>
+ <div class='col-md-4'>
+	<table class='table'>
+		<tr><td>Rate per Day:</td><td><input id="d-rate" name="d-rate" type="text" value="0"  /> </td></tr>
+		<tr><td>Number of  Days:</td><td> <input id="days" name="days" type="text" value='0'/> </td></tr>
+	</table>
+	<p><input type="button" value="Calculate Rental Cost" id="p1-rental-cost" class='btn btn-primary' /></p>
+	<h4>Cost: $<span id='p1-total'> 0 </span></h4>
+
+	<script>
+		// Read values
+		function readValues() {
+			const ratePerDay = document.querySelector("#d-rate").value;
+			const numberOfDays = document.querySelector("#days").value;
+
+			calcAndDisplay1(ratePerDay, numberOfDays);
+		}
+		// Calculate and display results
+		function calcAndDisplay1(ratePerDay, numberOfDays) {
+			// Calculate
+			const cost = parseFloat(ratePerDay) * parseFloat(numberOfDays);
+			
+			// display
+			document.querySelector("#p1-total").textContent = cost.toFixed(2);
+		}
+		document.querySelector("#p1-rental-cost").onclick = readValues;
+	</script>
+
+  </div>
+</div>
+<hr/>
+
+
+<!-- Problem 2 -->
+<h3>Problem 2: 2019 Taxes</h3>
+
+
+<p>Display Taxes  when the "Calculate 2019 Taxes" button is clicked:</p>
+<div class='row'>
+ <div class='col-md-4'>
+	<table class='table'>
+		<thead>
+			<tr><th class="thcol1">Item</th><th>Amount</th></tr>
+		</thead>
+		<tbody>
+		<tr class='itemlist'>
+			<td class="item" >Wages as reported in W-2</td>
+			<td ><input type='text' name='c1' class='service' id='c-1' value='0'/></td>
+		</tr>
+		<tr class='itemlist' >
+			<td class="item">Other Taxable Income (stocks/Investments)</td>
+			<td ><input type='text' name='c2' class='service' id='c-2' value='0'/></td>
+		</tr>
+		<tr class='itemlist'>
+			<td class="item">Mortgage/Rent Payments</td>
+			<td ><input type='text' name='c3' class='service' id='c-3' value='0'/></td>
+		</tr>
+		
+		<tr class='itemlist'>
+			<td class="item">Number of Dependents</td>
+			<td ><input type='text' name='c4' class='service' id='c-4' value='0'/></td>
+		</tr>
+		
+	
+		<tr>
+			<td>Total Taxes</td>
+			<td class='total' id='taxes'>0</td>
+		</tr>
+		</tbody>
+	</table>
+	<h4><input type='button' value='Calculate Taxes' id='calc-taxes' class='btn btn-primary' /></h4>
+
+	<script>
+		// Read values
+		function readValues() {
+			const wages = document.querySelector("#c-1").value;
+			const otherTaxableIncome = document.querySelector("#c-2").value;
+			const mortgageRentPayments = document.querySelector("#c-3").value;
+			const numberOfDependents = document.querySelector("#c-4").value;
+
+			calcAndDisplay2(wages, otherTaxableIncome, mortgageRentPayments, numberOfDependents);
+		}
+		// Calculate and display
+		function calcAndDisplay2(wages, otherTaxableIncome, mortgageRentPayments, numberOfDependents) {
+			// Calculate
+			const grossIncome = parseFloat(wages) + parseFloat(otherTaxableIncome);
+			const standardDeductions = parseInt(numberOfDependents) * 163;
+			const otherDeductions = parseFloat(mortgageRentPayments);
+			const taxableIncome = grossIncome - standardDeductions - otherDeductions;
+
+			let taxRate = 0;
+			if(taxableIncome < 10000) {
+				taxRate = 0.10; // 10% tax rate
+			}else if(taxableIncome >= 10000 && taxableIncome < 100000) {
+				taxRate = 0.15; // 15% tax rate
+			}else {
+				taxRate = 0.25; // 25% tax rate
+			}
+			const taxes = taxableIncome * taxRate;
+		
+			// Display
+			// document.querySelector("#taxes").textContent = "Gross Income: $" + grossIncome;
+			// document.querySelector("#taxes").textContent = "Standard Deductions: $" + standardDeductions;
+			// document.querySelector("#taxes").textContent = "Other Deductions: $" + otherDeductions;
+			// document.querySelector("#taxes").textContent = "Taxable Income: $" + taxableIncome;
+			// document.querySelector("#taxes").textContent = "Tax Rate: " + taxRate + "%";
+			document.querySelector("#taxes").textContent = "$" + taxes.toFixed(2);
+		}
+		document.querySelector("#calc-taxes").onclick = readValues;
+	</script>
+
+  </div>
+</div>
+<hr/>
+
+<h3>Problem 3: Calculate Storage Capacity</h3>
+<div class='row'>
+  <div class='col-md-4'>
+	<table class='table'>
+		<tr>
+			<td>Height</td>
+			<td><input type='text'  id='p3-height' value='0'/></td>
+		</tr>
+		<tr>
+			<td>Width</td>
+			<td><input type='text'  id='p3-width' value='0' /></td>
+		</tr>
+		<tr>
+			<td>Length: </td>
+			<td><input type='text' id='p3-length' value='0' /></td>
+	</table>
+
+	<h4><input type='button' value='Calculate Storage Units Needed' id='calc-units' class='btn btn-primary' /></h4>
+	<p>Number of storage units: <span id='total-units' class='total'>0</p>
+
+	<script>
+		// read inputs
+		function readInputs() {
+			const height = document.querySelector("#p3-height").value;
+			const width = document.querySelector("#p3-width").value;
+			const length = document.querySelector("#p3-length").value;
+
+			var valid = validation(height, width, length);
+
+			if(valid){
+				calcAndDisplay3(height, width, length);
+			}else {
+				alert("Error! All input values must be between 0 and 30! (Check canvas instructions)");
+			}
+		}
+
+		// calculate and display
+		function calcAndDisplay3(height, width, length) {
+			const totalVolume = 2637560;
+			const volumeOfEachBox = parseFloat(length) * parseFloat(width) * parseFloat(height);
+			const numberStorageUnits = (parseFloat(totalVolume) / parseFloat(volumeOfEachBox));
+
+			document.querySelector("#total-units").textContent = numberStorageUnits.toFixed(2) + " cubic feet";
+		}
+		document.querySelector("#calc-units").onclick = readInputs;
+	</script>
+		
+  </div>
+</div>
+
+<hr/>
+<h3>Problem 4: Validate Data</h3>
+<p>In problem 3, <strong>Length, Height, and Width</strong> must be an integer between 0 and 40.</p> 
+</form>
+
+<script>
+	function validation(height, width, length) {
+		var inputArray = [height, width, length];
+		for(var i = 0; i < inputArray.length; i++) {
+			if(inputArray[i] < 0 || inputArray[i] > 30) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+</script>
+
+</div>
+
+</body>
+</html>
