@@ -1,0 +1,76 @@
+<!-- Benzon Carlitos Salazar
+	CS381 - Assignment7
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+ 	<!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Assignment 7</title>
+</head>
+
+<style>
+	form {
+		padding: 100px;
+		text-align: left;
+		margin: auto;
+		display: table;
+	}
+	.table {
+ 		background-color: #334; 
+ 		color: #fff; 
+ 		font-weight: bold;
+	}
+	.lengthInput, .widthInput, .distanceInput {
+		text-align: right;
+ 		width: 100px;
+	}
+	#total {
+		width: 200px;
+ 		height: 50px;
+ 		font-weight: bold;
+	}
+	#error {
+		color: red;
+	}
+</style>
+
+<body>
+	<form class="tableForm">
+		<h1 id="tableHeader">Online Carpet Store</h1>
+		<table class="table">
+			<tr>
+				<td>Room Length (ft): </td>
+				<td><input type="text" name="Length" id="lengthInput" value="0" class="formInput items"></td>
+			</tr>
+			<tr>
+				<td>Room Width (ft): </td>
+				<td><input type="text" name="Width" id="widthInput" value="0" class="formInput items"></td>
+			</tr>
+			<tr>
+				<td>Distance for Delivery (miles): </td>
+				<td><input type="text" name="Distance" id="distanceInput" value="0" class="formInput items"></td>
+			</tr>			
+		</table>
+
+		<p>
+			<input type="button" value="Order" id="calculate">
+			<input type="reset" value="Reset">
+		</p>
+		<p id="outputWithInstallation"></p>
+		<p id="outputWithoutInstallation"></p>
+		<p id="totalArea"></p>
+		<p id="subTotal"></p>
+		<p id="deliveryCharges"></p>
+		<p id="discount"></p>
+		<p id="tax"></p>
+		<p id="totalAmount"></p>
+		<p id="error"></p>
+	</form>
+
+	<script type="text/javascript" src="./assignment7.js"></script>
+
+</body>
+</html>
