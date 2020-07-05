@@ -63,25 +63,45 @@ function calculateResults() {
 	let distance = document.querySelector("#distanceInput").value;
 
 	totalArea = parseFloat(length) * parseFloat(width);
+	
 	if(totalArea > 300) {
 		price = totalArea * 5;
 		savings = price * 0.1;
 		let discountedPrice = price - savings;
+		taxedAmount = (0.05 * discountedPrice);
+		totalAmount = taxedAmount + discountedPrice;
+		
+		if(distance > 0) {
+			deliveryCharges = 2.50 * parseFloat(distance);
+		}else {
+			deliveryCharges = 0;
+		}
 
-		return price, savings, discountedPrice;
+		displayResults(totalArea, price, savings, deliveryCharges, taxedAmount, totalAmount, discountedPrice);
 	}else {
 		price = totalArea * 5;
-	}
+		taxedAmount = (0.05 * price) + price;
+		totalAmount = price + taxedAmount;
 
-	if(distance > 0) {
-		return deliveryCharges = 2.50 * parseFloat(distance);
-	}else {
-		return deliveryCharges = 0;
+		if(distance > 0) {
+			deliveryCharges = 2.50 * parseFloat(distance);
+		}else {
+			deliveryCharges = 0;
+		}
+
+		displayResults(totalArea, price, savings=0, deliveryCharges, taxedAmount, totalAmount, discountedPrice=0);
 	}
 }
 
 /* Function to display results */
-function displayResults(totalArea, price, savings, deliveryCharges, taxedAmount, totalAmount) {
-	document.querySelector("#outputWithInstallation").textContent = "With installation charge:";
-	
+function displayResults(totalArea, price, savings, deliveryCharges, taxedAmount, totalAmount, discountedPrice) {
+	document.querySelector("#totalArea").textContent = "Total Area: " + totalArea;
+	document.querySelector("#subTotal").textContent = "Subtotal: $" + price;
+	document.querySelector("#deliveryCharges").textContent = "Delivery Charge: $" + deliveryCharges;
+	if(discountedPrice > 0) {
+		document.querySelector("#discount").textContent = "Discount: $" + discountedPrice;
+	}
+	document.querySelector("#tax").textContent = "Tax Amount: $" + taxedAmount;
+	document.querySelector("#totalAmountWithinstallation").textContent = "Total Amount (with installation charge): $" + (totalAmount + (2*totalArea));
+	document.querySelector("#totalAmountNoInstall").textContent = "Total Amount (with no installation charge): $" + totalAmount;
 }
