@@ -1,0 +1,3 @@
+Using JavaScript to Create Dynamic HTML Page
+
+Dynamic HTML, or DHTML, is a collection of technologies used together to create interactive and animated websites[1] by using a combination of a static markup language (such as HTML), a client-side scripting language (such as JavaScript), a presentation definition language (such as CSS), and the Document Object Model (DOM).

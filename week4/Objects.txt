@@ -1,0 +1,173 @@
+Objects
+
+Object
+
+Objects group together a set of variables and functions to create a model of a real world entity. In JavaScript almost everything is an object.
+
+In an object, variables become known as properties and functions become known as methods. Methods represent tasks that are associated with the object.
+
+There are several ways of creating objects in JavaScript.
+Method I: Defining Objects Using Literal Notation
+
+An object consists of a set of key/value pairs. Each key is separated from its value using a colon. Each property and method is separated by a comma.
+
+Syntax:
+
+var object_name = {
+
+     property_one: value_one,
+
+     property_two: value_two,
+
+      …
+
+     method_name: function(){ …. }
+
+};
+
+Example
+
+let monthly_sales = {
+
+      month : 'January',
+
+      category: 'TV',
+
+      num_items: 10,
+
+      cost: 200,
+
+     selling_price: 300
+
+     calculateProfit: function(){
+
+                return this.num_items*(this.selling_price - this.cost);
+
+     }
+
+};
+
+ 
+
+Use the dot notation to access  properties and methods of an object.
+
+ 
+
+Example
+
+const january_sales = monthly_sales.num_items;
+
+const january_profit = monthly_sales.calculateProfit();
+
+ 
+
+Note: You can also access the properties of an object (but not its methods) using square bracket syntax. Example
+
+const january_sales = monthly_sales[num_items];
+
+ 
+
+This method is useful when a variable is being used  in place of the property name.
+
+ 
+Method II: Defining Objects Using  Constructor Notation
+
+The new keyword and the object constructor create a blank object. Properties  and methods can be added to the blank object.
+
+Example
+
+let monthly_sales = new Object();
+
+monthly_sales.month = 'January',
+
+monthly_sales.category = 'TV',
+
+monthly_sales.num_items: = 10,
+
+monthly_sales.cost =  200,
+
+monthly_sales.selling_price = 300,
+
+monthly_sales.calculateProfit = function(){
+  return this.num_items*(this.selling_price - this.cost);
+}
+
+ 
+
+To delete a property, use the delete keyword followed by the object name and property name.
+
+Example
+
+delete monthly_sales.num_items;
+
+
+Creating Many Objects
+
+Sometimes you will want to create a list of objects to represent similar items. Object constructor can use a function as a template  to create a list of objects.
+
+First, we define a constructor function with the object's properties and methods. The name of the constructor function usually begins with a capital letter.
+
+The this keyword is used instead of the object name to indicate that the property or method belongs to the object that this function creates.
+
+Syntax:
+
+function Constructor_function_name( value_one, value_two, ...){
+
+this.property_one = value_one;
+
+this.property_two = value_two;
+
+.
+
+.
+
+.
+
+this.method_name = function(){
+
+ // statements
+
+}
+
+}
+
+ 
+
+Example
+
+function Course(id, courseid, title, credits){
+
+this.id = id;
+
+this.courseid = courseid;
+
+this.title = title;
+
+this.credits = credits;
+
+}
+
+ 
+
+Instances of the Course object can be created using this constructor function.
+
+The new keyword followed by a call to the constructor function creates a new object. The properties of each object are given as arguments to the function.
+
+Example
+
+const cs220Course = new Course('c6', 'COMPSCI 220', 'Intermediate Java', 3);
+
+const cs271Course = new Course('c8', 'COMPSCI 271', 'Assembly Programming', 3);
+
+ 
+
+Example:
+
+Create an array of objects:
+
+const course_list = new Array();
+
+course_list.push(new Course('c6', 'COMPSCI 220', 'Intermediate Java', 3) );
+
+course_list.push(new Course('c8', 'COMPSCI 271', 'Assembly Programming', 3) );
+
