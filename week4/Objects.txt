@@ -41,7 +41,7 @@ let monthly_sales = {
 
      calculateProfit: function(){
 
-                return this.num_items*(this.selling_price - this.cost);
+        return this.num_items*(this.selling_price - this.cost);
 
      }
 
