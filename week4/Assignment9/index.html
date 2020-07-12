@@ -1,0 +1,330 @@
+<!-- Benzon Carlitos Salazar
+	CS381 - Assignment 9 -->
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Page title </title>
+ <!-- Include bootstrap CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	
+
+
+ <style type="text/css">
+	thead { background-color: #333; color: #fff; font-weight: bold;  }
+	.items, #nitems, #subtotal, #tax, #total, #final {text-align: right; width: 100px; }
+	#checkout { width: 200px; height: 50px; font-weight: bold;}
+	#error-list { color: red;}
+ </style>
+
+</head>
+<body class='container-fluid'>
+ <form name="testForm">
+  <div class='row'>
+	<div class='col'>
+		<h2>Sam's Online Shop</h2>
+		<h3>15% discount on all online sales </h3>
+	</div>
+   </div>
+   <div class='row'>
+	<div class='col-sm-8'>
+		<table class='table'>
+			<thead>
+				<tr>
+					<th>Product</th><th>Unit cost</th><th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody id="product-list">
+			</tbody>
+		</table>
+		<p><input type="button" value="Purchase" id="checkout" class="btn btn-primary" /></p>
+	</div>
+ 
+    <div class='col-sm-4'>
+	  
+	  
+      <h3>Shopping Cart </h3>
+	  <!-- Display list of errors -->
+	  <div id='error-list'></div>
+      <table class='table'>
+        <tr>
+          <td>Total Items</td>
+          <td><span  id="nitems" >0</td>
+        </tr>
+        <tr>
+          <td>Subtotal</td>
+          <td><span  id="subtotal" >0</td>
+        </tr>
+        <tr>
+          <td>5% Sales tax</td>
+          <td><span id="tax" >0</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td><span id="total" >0</td>
+        </tr>
+        <tr>
+		  <td>Final amount (with 15% discount)</td>
+		  <td><span id="final"  >0</td>
+        </tr>
+      </table>
+
+
+
+
+	  
+	</div>
+ </div>
+<script>
+
+// Define an array of objects to store products
+const products = [
+	{
+		type: 'electronics',
+		name: 'Audio Technica ATH-M50x',
+		unitCost: 119.99,
+		quantity: 2
+	},
+	{
+		type: 'electronics',
+		name: 'Sennheiser HD 202 II',
+		unitCost: 24.50,
+		quantity: 5
+	},
+	{
+		type: 'electronics',
+		name: 'GPX HM3817DTBK Micro System',
+		unitCost: 135.99,
+		quantity: 1
+	},
+	{
+		type: 'electronics',
+		name: 'Samsung MX-J630 2.0 Channel 230 Watt System',
+		unitCost: 117.99,
+		quantity: 4
+	},
+	{
+		type: 'electronics',
+		name: 'M-Audio Bass Traveler',
+		unitCost: 29.00,
+		quantity: 9
+	},
+	{
+		type: 'electronics',
+		name: 'HLED Strip light kit',
+		unitCost: 17.95,
+		quantity: 5
+	},
+	{
+		type: 'movies',
+		name: 'Spectre',
+		unitCost: '19.99',
+		quantity: 0
+	},
+	{
+		type: 'movies',
+		name: 'Finding Dory',
+		unitCost: 19.99,
+		quantity: 4
+	},
+	
+	{
+		type: 'movies',
+		name: 'Terminator: Genisys',
+		unitCost: 14.95,
+		quantity: 3
+	},
+	{
+		type: 'movies',
+		name: 'Interstellar',
+		unitCost: 12.00,
+		quantity: 4
+	},
+	{
+		type: 'movies',
+		name: 'Transformers: Age of Extinction',
+		unitCost: 9.95,
+		quantity: 7
+	},
+	{
+		type: 'movies',
+		name: 'Eye in the Sky',
+		unitCost: 14.95,
+		quantity: 6
+	},
+	{
+		type: 'movies',	
+		name: 'Venom',
+		unitCost: '22.99',
+		quantity: 0
+	},
+	{
+		type: 'movies',
+		name: 'The spy who dumped me',
+		unitCost: 29.00,
+		quantity: 8
+	},
+	{
+		type: 'movies',
+		name: 'Mamma Mia, Here We Go Again',
+		unitCost: 22.99,
+		quantity: 4
+	},
+	{
+		type: 'electronics',
+		name: 'M-Audio Bass Traveler',
+		unitCost: 29.00,
+		quantity: 5
+	},
+	{
+		type: 'video-games',
+		name: 'Battlefield 1',
+		unitCost: 59.99,
+		quantity: 3
+	},
+	{
+		type: 'video-games',
+		name: 'Overwatch',
+		unitCost: 40.00,
+		quantity: 1
+	},
+	{
+		type: 'video-games',
+		name: 'Gears of War 4',
+		unitCost: 59.99,
+		quantity: 8
+	},
+	{
+		type: 'video-games',
+		name: 'Titanfall 2',
+		unitCost: 59.99,
+		quantity: 7
+	},
+	{
+		type: 'video-games',
+		name: 'Sid Meier\'s Civilization VI ',
+		unitCost: 59.99,
+		quantity: 4
+	},
+	{
+		type: 'video-games',
+		name: 'The Sims 4',
+		unitCost: 39.99,
+		quantity: 2
+	},
+	{
+		type: 'video-games',
+		name: 'Grand Theft Auto V',
+		unitCost: 59.99,
+		quantity: 7
+	}
+];
+
+// Display Product list
+displayProductList();
+
+function displayProductList() {
+	let output = "";
+	const max = products.length;
+	
+	for( let i = 0; i < max; i++) {
+		const p = products[i]; // 
+		output += "<tr><td id=\"ch-" + (i + 1) + "-label\" >" + p.name + "</td>";
+		output += "<td id=\"ch-" + (i + 1) + "-unitCost\" >" + p.unitCost + "</td>";
+		output += "<td><input type=\"text\" id=\"ch-" + (i + 1) + "-qnt\"  class=\"form-control items\" value=\"0\"></td>";
+		output += "</tr>";
+	}
+	document.querySelector("#product-list").innerHTML = output;
+}
+
+  // Add an event listener to the element identified by the ID attribute 'checkout'
+	document.querySelector('#checkout').onclick = function(){
+		const error_list = validateInputData();
+		if (error_list.length >0){
+			// List of errors is not empty. Display error messages.	
+				displayErrorMessages(error_list);
+			// Reset the ouput
+				resetCalculations();
+
+		} else {
+			// Display result
+				displayResult();
+						
+			// Reset all the error messages
+				resetErrorMessages();
+			
+		}
+	}
+	
+	function validateInputData(){
+			/* This function returns an array of error messages;
+				Valid input:  value must be a nonnegative number
+			*/
+			let errors = [];
+
+			for(let i = 1; i <= products.length; i++) {
+				const qnt = document.querySelector("#ch-" + i + "-qnt").value;
+				if(isNaN(qnt) || qnt < 0) {
+					errors.push("ERROR: Some quantities are invalid!");
+				}
+			}
+			return errors;
+	}
+		
+	function displayErrorMessages(error_list){
+			if (error_list.length > 0){
+				let message = '';
+				for (let i=0; i<error_list.length; i++){
+					message += "<p>" + error_list[i] + "</p>";
+				}
+				// display errors	
+				document.querySelector('#error-list').innerHTML = message;
+			}
+			// reset data output
+			resetCalculations();
+	}
+
+	function resetErrorMessages() {
+			document.querySelector('#error-list').innerHTML =  "";
+	}
+		
+	function resetCalculations() {
+		// Reset the output
+		document.querySelector('#nitems').textContent = 0;
+		document.querySelector('#subtotal').textContent = 0;
+		document.querySelector('#tax').textContent = 0;
+		document.querySelector('#total').textContent = 0;
+		document.querySelector('#final').textContent = 0;
+	}
+	
+	function displayResult(){
+		//   Calculate total items
+		 let total = 0;
+		 let subtotal = 0;
+		 for (let i=1; i<=products.length; i++){
+			total += Number(document.querySelector('#ch-' + i +'-qnt').value);
+			subtotal += document.querySelector('#ch-' + i +'-qnt').value * document.querySelector('#ch-' + i +'-unitCost').textContent
+		 }
+		
+		// Calculate taxes
+		const taxes = subtotal*0.05;
+		
+		// Calculate the final amount
+		const final_amount = (subtotal + taxes)*0.85;
+		
+		
+		// display result
+		document.querySelector('#nitems').textContent = total;
+		document.querySelector('#subtotal').textContent = subtotal.toFixed(2);
+		
+		document.querySelector('#tax').textContent = taxes.toFixed(2);
+		document.querySelector('#total').textContent = (subtotal + taxes).toFixed(2);
+		
+		document.querySelector('#final').textContent = final_amount.toFixed(2);
+	}
+</script>
+
+</body>
+</html>
