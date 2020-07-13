@@ -1,2 +1,3 @@
-# CS381
-For UW Whitewater - CS381 Summer Lecture
+# Javascript and DHTML
+
+This repository is for my Javascript and DHTML summer 2020 course in University of Wisconsin - Whitewater
