@@ -305,7 +305,7 @@ function displayProductList() {
 		 let subtotal = 0;
 		 for (let i=1; i<=products.length; i++){
 			total += Number(document.querySelector('#ch-' + i +'-qnt').value);
-			subtotal += document.querySelector('#ch-' + i +'-qnt').value * document.querySelector('#ch-' + i +'-unitCost').textContent
+			subtotal += document.querySelector('#ch-' + i +'-qnt').value * document.querySelector('#ch-' + i +'-unitCost').textContent;
 		 }
 		
 		// Calculate taxes

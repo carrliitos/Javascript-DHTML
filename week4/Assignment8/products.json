@@ -75,7 +75,7 @@ const products = [
 	{
 		type: 'movies',	
 		name: 'Venom',
-		price: '22.99',
+		price: 22.99,
 		quantity: 0
 	},
 	{
