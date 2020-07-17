@@ -1,0 +1,491 @@
+<!-- Benzon Carlitos Salazar
+	CS381 - Exam 2 -->
+
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exam II</title>
+
+    <!-- Bootstrap -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+<style type='text/css'>
+    * { 
+    	box-sizing: border-box
+    }
+    input[type=text] {
+    	text-align: left
+    }
+    .addme {
+    	height: 28px; 
+    	width: 80px; 
+    	padding: 0; 
+    }
+    .clm-label { 
+    	position: relative; 
+    	background: #333; 
+    	color: #fff;
+    }
+    .stage { 
+    	background-color : #eee; 
+    	font-weight: bold;
+    }
+    .seat { 
+    	width: 20px; 
+    	height: 20px;
+    }
+</style>
+</head>
+<body class='container'>
+<h3>Problem 1</h3>
+<div class='row'>
+  <div class='col-xs-10'>
+
+    <h1>Seat Selector</h1>
+        <table class='table'>
+			<thead>
+                <tr>
+                    <th  align="center" colspan="6">Front</t>
+                </tr>
+			</thead>
+			<tbody>
+                <tr class='stage'>
+                    <td>1A <input id="r-1A" type="checkbox" value="1A" class="seat" data-price='300' data-index='0' onclick="displayDetails(0)" /></td>
+                    <td>1B <input id="r-1B" type="checkbox" value="1B" class="seat" data-price='300' data-index='1' onclick="displayDetails(1)" /></td>
+                    <td>1C <input id="r-1C" type="checkbox" value="1C" class="seat" data-price='300' data-index='2' onclick="displayDetails(2)" /></td>
+                    <td class='isle'>&nbsp</td>
+                    <td>1D <input id="r-1D" type="checkbox" value="1D" class="seat" data-price='300' data-index='3' onclick="displayDetails(3)" /></td>
+                    <td>1E <input id="r-1E" type="checkbox" value="1E" class="seat" data-price='300' data-index='4' onclick="displayDetails(4)" /></td>
+                </tr>
+                <tr class='stage'>
+                    <td>2A <input id="r-2A" type="checkbox" value="2A" class="seat" data-price='300' data-index='5' onclick="displayDetails(5)" /></td>
+                    <td>2B <input id="r-2B" type="checkbox" value="2B" class="seat" data-price='300' data-index='6' onclick="displayDetails(6)" /></td>
+                    <td>2C <input id="r-2C" type="checkbox" value="2C" class="seat" data-price='300' data-index='7' onclick="displayDetails(7)" /></td>
+                    <td class='isle'>&nbsp</td>
+                    <td>2D <input id="r-2D" type="checkbox" value="2D" class="seat" data-price='300' data-index='8' onclick="displayDetails(8)" /></td>
+                    <td>2E <input id="r-2E" type="checkbox" value="2E" class="seat" data-price='300' data-index='9' onclick="displayDetails(9)" /></td>
+                </tr>
+                <tr class='stage'>
+                    <td>3A <input id="r-3A" type="checkbox" value="3A" class="seat" data-price='200' data-index='10' onclick="displayDetails(10)" /></td>
+                    <td>3B <input id="r-3B" type="checkbox" value="3B" class="seat" data-price='200' data-index='11' onclick="displayDetails(11)" /></td>
+                    <td>3C <input id="r-3C" type="checkbox" value="3C" class="seat" data-price='200' data-index='12' onclick="displayDetails(12)" /></td>
+                    <td class='isle'>&nbsp</td>
+                    <td>3D <input id="r-3D" type="checkbox" value="3D" class="seat" data-price='200' data-index='13' onclick="displayDetails(13)" /></td>
+                    <td>3E <input id="r-3E" type="checkbox" value="3E" class="seat" data-price='200' data-index='14' onclick="displayDetails(14)" /></td>
+                </tr>
+                <tr class='stage'>
+                    <td>4A <input id="r-4A" type="checkbox" value="4A" class="seat" data-price='200' data-index='15' onclick="displayDetails(15)" /></td>
+                    <td>4B <input id="r-4B" type="checkbox" value="4B" class="seat" data-price='200' data-index='16' onclick="displayDetails(16)" /></td>
+                    <td>4C <input id="r-4C" type="checkbox" value="4C" class="seat" data-price='200' data-index='17' onclick="displayDetails(17)" /></td>
+                    <td class='isle'>&nbsp</td>
+                    <td>4D <input id="r-4D" type="checkbox" value="4D" class="seat" data-price='200' data-index='18' onclick="displayDetails(18)" /></td>
+                    <td>4E <input id="r-4E" type="checkbox" value="4E" class="seat" data-price='200' data-index='19' onclick="displayDetails(19)" /></td>
+                </tr>
+                <tr class='stage'>
+                    <td>5A <input id="r-5A" type="checkbox" value="5A" class="seat" data-price='125' data-index='20' onclick="displayDetails(20)" /></td>
+                    <td>5B <input id="r-5B" type="checkbox" value="5B" class="seat" data-price='125' data-index='21' onclick="displayDetails(21)" /></td>
+                    <td>5C <input id="r-5C" type="checkbox" value="5C" class="seat" data-price='125' data-index='22' onclick="displayDetails(22)" /></td>
+                    <td class='isle'>&nbsp</td>
+                    <td>5D <input id="r-5D" type="checkbox" value="5D" class="seat" data-price='125' data-index='23' onclick="displayDetails(23)" /></td>
+                    <td>5E <input id="r-5E" type="checkbox" value="5E" class="seat" data-price='125' data-index='24' onclick="displayDetails(24)" /></td>
+                </tr>
+                <tr class='stage'>
+                    <td>6A <input id="r-6A" type="checkbox" value="6A" class="seat" data-price='125' data-index='25' onclick="displayDetails(25)" /></td>
+                    <td>6B <input id="r-6B" type="checkbox" value="6B" class="seat" data-price='125' data-index='26' onclick="displayDetails(26)" /></td>
+                    <td>6C <input id="r-6C" type="checkbox" value="6C" class="seat" data-price='125' data-index='27' onclick="displayDetails(27)" /></td>
+                    <td class='isle'>&nbsp</td>
+                    <td>6D <input id="r-6D" type="checkbox" value="6D" class="seat" data-price='125' data-index='28' onclick="displayDetails(28)" /></td>
+                    <td>6E <input id="r-6E" type="checkbox" value="6E" class="seat" data-price='125' data-index='29' onclick="displayDetails(29)" /></td>
+                </tr>
+                <tr class='stage'>
+                    <td>7A <input id="r-7A" type="checkbox" value="7A" class="seat" data-price='125' data-index='30' onclick="displayDetails(30)" /></td>
+                    <td>7B <input id="r-7B" type="checkbox" value="7B" class="seat" data-price='125' data-index='31' onclick="displayDetails(31)" /></td>
+                    <td>7C <input id="r-7C" type="checkbox" value="7C" class="seat" data-price='125' data-index='32' onclick="displayDetails(32)" /></td>
+                    <td class='isle'>&nbsp</td>
+                    <td>7D <input id="r-7D" type="checkbox" value="7D" class="seat" data-price='125' data-index='33' onclick="displayDetails(33)" /></td>
+                    <td>7E <input id="r-7E" type="checkbox" value="7E" class="seat" data-price='125' data-index='34' onclick="displayDetails(34)" /></td>
+                </tr>
+			</tbody>
+		</table>
+<p><strong>Part 1:</strong> Display seat number and cost  when a seat is selected</p>
+<p><strong>Part 2:</strong> Display the total number of selected seats and a list of selected seats:  <input type='button' class='btn btn-primary' value='Reserve Seats' id='p1-2' onclick="displayTotalNumber()" /></p>
+
+<p><strong>Part 3:</strong> Display the total cost of the selected seats: <input type='button' class='btn btn-primary' 
+value='Display Total' id='p1-3' onclick="displayTotalCost()" /></p>
+</div></div>
+
+
+
+  <hr>
+<h3>Problem 2</h3>
+
+<div class='row' >
+    <div class='col-sm-8'  >
+		<h4>Car List</h4>
+		<table class='table table-bordered'>
+			<thead>
+				<tr class='clm-label'><td>Stock ID</td><td class='clm-label'>Make</td><td class='clm-label'>Model</td><td class='clm-label'>Year</td><td class='clm-label'>Type</td>
+					<td class='clm-label'>Price</td><td class='clm-label'>Mileage</td><td class='clm-label'>Select</td>
+				</tr>
+			</thead>
+			<tbody id='car-list'></tbody>
+		</table>
+	</div>
+	<div class='col-sm-4'>
+		<div class='row'>
+			<div class='col-sm-6'>
+				<h4>Shopping Cart</h4>
+			</div>
+			<div class='col-sm-6 text-right'>
+				<h4> Total: </strong> $<span id='cart-total'>0.00</span></h4>
+			</div>
+		</div>
+			   
+		<table class='table table-bordered' >
+			<thead>
+				<tr>
+					<td class='clm-label'>Make</td><td class='clm-label'>Model</td><td class='clm-label'>Price</td>
+				</tr>
+			</thead>
+			<tbody id='mycart'></tbody>
+		</table>
+	</div>
+</div>
+<hr>
+
+<h3>Problem 3</h3>
+<p><button id='p3' class='btn btn-primary' onclick="displaySedans()" >Display all Sedans</button></p>
+<table class='table table-bordered'>
+	<thead>
+        <tr class='clm-label'><td class='clm-label'>Make</td><td class='clm-label'>Model</td><td class='clm-label'>Year</td>
+        <td class='clm-label'>Price</td></tr>
+	</thead>
+	<tbody  id='p3-list'>
+	</tbody>
+</table>
+<hr>
+
+
+<h3>Problem 4</h3>
+<p>Miles less than 
+	<select id='select-miles'>
+		<option value="0" selected='selected'>--select #miles--</option>
+		<option value="50000" >50,000 miles</option>
+		<option value="100000" >100,000 miles</option>
+		<option value="1500000" >150,000 miles</option>
+		<option value="200000" >200,000 miles</option>
+	</select>
+	<button id='p4' class='btn btn-primary' onchange="changeHandler()" >Filter Vehicles by Mileage</button></p>
+  <table class='table table-bordered'>
+	<thead>
+        <tr class='clm-label'><td class='clm-label'>Make</td><td class='clm-label'>Model</td><td class='clm-label'>Year</td>
+        <td class='clm-label'>Price</td></tr>
+	</thead>
+	<tbody  id='p4-list'>
+	</tbody>
+  </table>
+<hr>
+
+
+<h3>Problem 5</h3>
+<p><button id='p5' class='btn btn-primary' onclick="displayInvoice()">Display Invoice</button></p>
+<table class='table' >   
+		<tr><td class='col-xs-4'>Total number of cars: </td><td class='col-xs-2' id='total-items'>0</td></tr>
+		<tr><td class='col-xs-4'>Subtotal: </td><td class='col-xs-2' id='sub-total'>0</td></tr>
+		<tr><td class='col-xs-4'>Taxes: </td><td class='col-xs-2' id='taxes'>0</td></tr>
+		<tr><td class='col-xs-4'>Registration fee: </td><td class='col-xs-2' id='registration'>0</td></tr>
+		<tr><td class='col-xs-4'>Total due: </td><td class='col-xs-2' id='total'>0</td></tr>
+</table>
+<script>
+
+	// Define seat object using a constructor function
+	function Seat(number, cost){
+			this.number = number;
+			this.cost = cost;
+	}
+	// Declare an array of Seat objects
+	let seat_list = [];
+	// Create an instance of Seat object and add to the seat_list array
+	seat_list.push(new Seat('1A', 300));
+	seat_list.push(new Seat('1B', 300));
+	seat_list.push(new Seat('1C', 300));
+	seat_list.push(new Seat('1D', 300));
+	seat_list.push(new Seat('1E', 300));
+	seat_list.push(new Seat('2A', 300));
+	seat_list.push(new Seat('2B', 300));
+	seat_list.push(new Seat('2C', 300));
+	seat_list.push(new Seat('2D', 300));
+	seat_list.push(new Seat('2E', 300));
+	seat_list.push(new Seat('3A', 200));
+	seat_list.push(new Seat('3B', 200));
+	seat_list.push(new Seat('3C', 200));
+	seat_list.push(new Seat('3D', 200));
+	seat_list.push(new Seat('3E', 200));
+	seat_list.push(new Seat('4A', 200));
+	seat_list.push(new Seat('4B', 200));
+	seat_list.push(new Seat('4C', 200));
+	seat_list.push(new Seat('4D', 200));
+	seat_list.push(new Seat('4E', 200));
+	seat_list.push(new Seat('5A', 125));
+	seat_list.push(new Seat('5B', 125));
+	seat_list.push(new Seat('5C', 125));
+	seat_list.push(new Seat('5D', 125));
+	seat_list.push(new Seat('5E', 125));
+	seat_list.push(new Seat('6A', 125));
+	seat_list.push(new Seat('6B', 125));
+	seat_list.push(new Seat('6C', 125));
+	seat_list.push(new Seat('6D', 125));
+	seat_list.push(new Seat('6E', 125));
+	seat_list.push(new Seat('7A', 125));
+	seat_list.push(new Seat('7B', 125));
+	seat_list.push(new Seat('7C', 125));
+	seat_list.push(new Seat('7D', 125));
+	seat_list.push(new Seat('7E', 125));
+
+
+	// Define  car object using a constructor function
+	function Car(id, car_make, car_model, car_year, car_type, car_price, car_mileage) {
+			this.stockid = id;
+			this.make = car_make;
+			this.model = car_model;
+			this.year = car_year;
+			this.type = car_type;
+			this.price = car_price;
+			this.mileage = car_mileage;
+	}
+
+
+// Declare an array of Car objects
+	let car_list = [];
+
+	// Create an instance of the Car object and add it to the car_list array
+	car_list.push(new Car(1001, "Toyota", "Camry", 2017, "Sedan",  17555, 55060));
+	car_list.push(new Car(1002, "Volvo", "X90", 2013, "SUV",  15575, 203125));
+	car_list.push(new Car(1251, "Toyota", "Sienna", 2013, "Minivan", 15775, 70000));
+	car_list.push(new Car(1321, "Porsche", "Panamera", 2012, "Hatchback",  104250, 110567));
+	car_list.push(new Car(1904, "Honda", "Accord", 2013, "Sedan",  13370, 35000));
+	car_list.push(new Car(1855, "Toyota", "Highlander", 2014, "SUV",  18555, 55060));
+	car_list.push(new Car(1543, "Ford", "Fusion", 2011, "Sedan",  13575, 206312));
+	car_list.push(new Car(1345, "Toyota", "Sienna", 2017, "Minivan",  25775, 40000));
+	car_list.push(new Car(2133, "Dodge", "Caravan", 2016, "Minivan",  30250, 117567));
+	car_list.push(new Car(4555, "Toyota", "Highlander", 2014, "SUV",  18555, 55060));
+	car_list.push(new Car(2999, "Lexus", "LFA", 2014, "coupe",  381370, 95400));
+	car_list.push(new Car(3001, "Ferrari", "Rubino", 2014, "coupe",  354370, 5500));
+	car_list.push(new Car(5155, "Jeep", "Wrangler", 2015, "SUV",  16255, 25060));
+	car_list.push(new Car(4002, "Audi", "R8", 2016, "convertible",  181370, 4500));
+	car_list.push(new Car(1955, "Ford", "Expedition", 2014, "SUV",  25155, 35090));
+	car_list.push(new Car(1960, "Toyota", "Avlon", 2016, "Sedan",  25155, 35090));
+	// Display car list
+	let this_element = "";
+	for (let i=0; i<car_list.length; i++){
+			this_element += "<tr class='car-item' id='l-"+i+"' >" ;
+			this_element += "<td>" + car_list[i].stockid + "</td><td>" + car_list[i].make + "</td>";
+			this_element += "<td>" + car_list[i].model + "</td><td>" + car_list[i].year + "</td><td>" + car_list[i].type + "</td>";
+			this_element += "<td> $" + car_list[i].price + "</td>";
+			this_element += "<td>" + car_list[i].mileage + "</td>";
+			this_element += "<td><button type='button'  data-index='"+i+"' class='addme btn btn-primary' ";
+		    this_element +=  "data-stockid='"+ car_list[i].stockid + "'onclick=\"addToCart(" + i + ")\">Add</button></td></tr>";
+
+			
+	}
+document.querySelector("#car-list").innerHTML = this_element;
+const selectedItems = [];
+	
+	function displayDetails(index) {
+		const seat = seat_list[index];
+		const seatNumber = seat_list[index].number;
+		const cost = seat_list[index].cost;
+
+		const id = "#r-" + seatNumber;
+		if (document.querySelector(id).checked) {
+			const msg = "You have selected seat " + seatNumber + " for $" + cost;
+			alert(msg)
+		}
+	}
+
+	function displayTotalNumber() {
+	/* Display total number of selected seats and a list of selected seats*/
+		let totalNumber = 0;
+		let list = "";
+		const max = seat_list.length;
+		for(let index = 0; index < max; index++) {
+			// Read the seat information
+			const seat = seat_list[index];
+			const seatNumber = seat_list[index].number;
+			// Define id of each checkboxes
+			const id = "#r-" + seatNumber;
+			// If the checkbox is checked then read type of the selected ticket
+			if (document.querySelector(id).checked) {
+				totalNumber++;
+				list += seatNumber + " ";
+			}
+		}
+		if (totalNumber > 0) {
+			alert("You have selected " + totalNumber + " ticket types: " + list);
+		} else {
+			alert("You have not selected any seats yet!");
+		}
+	}
+
+	function displayTotalCost() {
+		/* Display the total cost of the selected seats */
+		let totalCost = 0;
+		let list = "";
+		const max = seat_list.length;
+		for(let index = 0; index < max; index++) {
+			// Read the seat information
+			const seat = seat_list[index];
+			const seatCost = seat_list[index].cost;
+			const seatNumber = seat_list[index].number;
+			// Define id of each checkboxes
+			const id = "#r-" + seatNumber;
+			// If the checkbox is checked then read type of the selected ticket
+			if (document.querySelector(id).checked) {
+				totalCost += seatCost;
+				list += seatNumber + " ";
+			}
+		}
+		if (totalCost > 0) {
+			alert("Your total cost is: $" + totalCost.toFixed(2) + "\nFor ticket types: " + list);
+		} else {
+			alert("You have not selected any seats yet!");
+		}
+	}
+
+	function addToCart(index) {
+		selectedItems.push(index);
+		displayCart();
+	}
+
+	function displayCart() {
+		let output = "";
+		let total = 0;
+		const max = selectedItems.length;
+		for (let i=0; i < max; i++){
+			// For each i, read the array index and then identify the corresponding  car
+			const index = selectedItems[i];
+			const car = car_list[index];
+			const price = car.price;
+			output += "<tr class='car-item' id='l-"+i+"' >" ;
+			output += "<td>" + car.make + "</td>";
+			output += "<td>" + car.model + "</td><td> $" + price.toFixed(2) + "</td></tr>";
+			total += price;
+		}
+		document.querySelector("#mycart").innerHTML = output;
+		document.querySelector("#cart-total").innerHTML = total.toFixed(2);
+			
+	}
+
+	function displaySedans() {
+		let output = "";
+		const max = selectedItems.length;
+		for(let i = 0; i < max; i++) {
+			const index = selectedItems[i];
+			const car = car_list[index];
+			const type = car.type;
+			if(type == "Sedan") {
+				output += "<tr class='car-item' id='l-"+i+"' >" ;
+				output += "<td>" + car.make + "</td>";
+				output += "<td>" + car.model + "</td>";
+				output += "<td>" + car.year + "</td>";
+				output += "<td> $" + car.price + "</td></tr>";
+			}
+		}
+		document.querySelector("#p3-list").innerHTML = output;
+	}
+
+	let selectMiles = document.querySelector("#select-miles");
+	selectMiles.addEventListener("change", function () {
+		if(event.target.value == 200000) {
+			const listCars = car_list.length;
+			let output = "";
+			for(let i = 0; i < listCars; i++) {
+				if(car_list[i].mileage <= 200000) {
+					output += "<tr class='car-item' id='l-"+i+"' >" ;
+					output += "<td>" + car_list[i].make + "</td>";
+					output += "<td>" + car_list[i].model + "</td>";
+					output += "<td>" + car_list[i].year + "</td>";
+					output += "<td> $" + car_list[i].price + "</td></tr>";
+				}
+			}
+			document.querySelector("#p4-list").innerHTML = output;
+		}else if(event.target.value == 150000) {
+			const listCars = car_list.length;
+			let output = "";
+			for(let i = 0; i < listCars; i++) {
+				if(car_list[i].mileage <= 150000) {
+					output += "<tr class='car-item' id='l-"+i+"' >" ;
+					output += "<td>" + car_list[i].make + "</td>";
+					output += "<td>" + car_list[i].model + "</td>";
+					output += "<td>" + car_list[i].year + "</td>";
+					output += "<td> $" + car_list[i].price + "</td></tr>";
+				}
+			}
+			document.querySelector("#p4-list").innerHTML = output;
+		}else if(event.target.value == 100000) {
+			const listCars = car_list.length;
+			let output = "";
+			for(let i = 0; i < listCars; i++) {
+				if(car_list[i].mileage <= 100000) {
+					output += "<tr class='car-item' id='l-"+i+"' >" ;
+					output += "<td>" + car_list[i].make + "</td>";
+					output += "<td>" + car_list[i].model + "</td>";
+					output += "<td>" + car_list[i].year + "</td>";
+					output += "<td> $" + car_list[i].price + "</td></tr>";
+				}
+			}
+			document.querySelector("#p4-list").innerHTML = output;
+		}else if(event.target.value == 50000) {
+			const listCars = car_list.length;
+			let output = "";
+			for(let i = 0; i < listCars; i++) {
+				if(car_list[i].mileage <= 50000) {
+					output += "<tr class='car-item' id='l-"+i+"' >" ;
+					output += "<td>" + car_list[i].make + "</td>";
+					output += "<td>" + car_list[i].model + "</td>";
+					output += "<td>" + car_list[i].year + "</td>";
+					output += "<td> $" + car_list[i].price + "</td></tr>";
+				}
+			}
+			document.querySelector("#p4-list").innerHTML = output;
+		}else {
+			return;
+		}
+	});
+
+	function displayInvoice() {
+		let output = "";
+		let totalCars = 0;
+		let subtotal = 0;
+		let taxes = 0;
+		let registrationFee = 0;
+		let totalDue = 0;
+		const max = selectedItems.length;
+		for (let i=0; i < max; i++){
+			// For each i, read the array index and then identify the corresponding  car
+			const index = selectedItems[i];
+			const car = car_list[index];
+			totalCars++;
+			subtotal += car.price;
+		}
+
+		taxes = (0.06 * subtotal);
+		registrationFee = (0.05 * subtotal);
+		totalDue = subtotal + taxes + registrationFee;
+
+		document.querySelector("#total-items").innerHTML = totalCars;
+		document.querySelector("#sub-total").innerHTML = "$" + subtotal.toFixed(2);
+		document.querySelector("#taxes").innerHTML = "$" + taxes.toFixed(2);
+		document.querySelector("#registration").innerHTML = "$" + registrationFee.toFixed(2);
+		document.querySelector("#total").innerHTML = "$" + totalDue.toFixed(2);
+
+	}
+
+</script>
+
+</body></html>
+
+
+

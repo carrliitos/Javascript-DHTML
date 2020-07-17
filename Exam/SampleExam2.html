@@ -1,0 +1,204 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Exam II</title>
+
+<!-- Bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type='text/css'>
+*{ box-sizing: border-box}   
+input[type=text]{text-align: left}
+.addme { height: 28px; width: 80px; padding: 0; }
+.clm-label { position: relative; background: #333; color: #fff;}
+	.stage { background-color : #eee; font-weight: bold;}
+	.ticket { width: 20px; height: 20px;}
+</style>
+</head>
+<body class='container'>
+<h3>Problem 1</h3>
+<div class='row'>
+  <div class='col-xs-10'>
+<p>Users should be able to use checkboxes to select multiple tickets. Each ticket corresponds to an element (object) in the ticket_list array. 
+Also, cost of each ticket is defined using the value attribute of each input element.
+
+
+<h1>Purchase Tickets</h1>
+<table class='table'>
+
+<tr class='stage'>
+<td>$100 <input id="r-A" type="checkbox" value="100" class="ticket"  onclick="displayDetails(0)" /></td>
+<td>$75  <input id="r-B" type="checkbox" value="75"  class="ticket"  onclick="displayDetails(1)" /></td>
+<td>$50  <input id="r-C" type="checkbox" value="50"  class="ticket"  onclick="displayDetails(2)" /></td>
+<td>$30  <input id="r-D" type="checkbox" value="25"  class="ticket"  onclick="displayDetails(3)" /></td>
+
+</tr>
+</table>
+
+<p><strong>Part 1:</strong> Display cost and type  when a ticket type is selected</p>
+<p><strong>Part 2:</strong> Display the total number of selected tickets and a list of selected ticket types. For example, if types  A, B, and C are selected, then you may display the message
+ “You have selected 3 ticket types: A B C”  
+<input type='button' class='btn btn-primary' value='Reserve Tickets' id='p1' onclick="displayTotal()"/></p>
+
+
+</div></div>
+  <hr>
+<h3>Problem 2</h3>
+<p> The car_list array contains information about the used cars at Sam's Auto Sales.
+ When an Add button is clicked, append make, model and price of the selected vehicle to the shopping cart. </p>
+
+<div class='row' >
+<div class='col-md-9 '  >
+   <h2>Car List</h2>
+<table class='table table-bordered' >
+				<thead>
+<tr class='clm-label'><td>Stock ID</td><td class='clm-label'>Make</td><td class='clm-label'>Model</td><td class='clm-label'>Year</td><td class='clm-label'>Type</td>
+<td class='clm-label'>Color</td><td class='clm-label'>Price</td><td class='clm-label'>Mileage</td><td class='clm-label'>Select</td></tr>
+				</thead>
+				<tbody id='car-list'></tbody>
+</table>
+</div>
+<div class='col-md-3'>
+<h2>Shopping Cart</h2>
+<table class='table table-bordered' >
+  <thead>
+<tr>
+<td class='clm-label'>Make</td><td class='clm-label'>Model</td><td class='clm-label'>Price</td>
+</tr>
+  </thead>
+ <tbody id='mycart'>
+  </tbody>
+</table>
+</div>
+</div>
+<hr>
+
+
+<script>
+
+// Define ticket object using a constructor function
+function Seat(type, cost){
+	this.type = type;
+	this.cost = cost;
+}
+// Declare an array of Ticket objects
+let ticket_list = [];
+// Create an instance of Ticket object and add to the ticket_list array
+ticket_list.push(new Seat('A', 100));
+ticket_list.push(new Seat('B', 75));
+ticket_list.push(new Seat('C', 50));
+ticket_list.push(new Seat('D', 30));
+
+
+
+
+// Define  car object using a constructor function
+function Car(id, car_make, car_model, car_year, car_type, car_color, car_price, car_mileage) {
+	this.stockid = id;
+	this.make = car_make;
+	this.model = car_model;
+	this.year = car_year;
+	this.type = car_type;
+	this.color = car_color;
+	this.price = car_price;
+	this.mileage = car_mileage;
+}
+
+
+// Declare an array of Car objects
+let car_list = [];
+
+// Create an instance of the Car object and add it to the car_list array
+car_list.push(new Car(1001, "Toyota", "Camry", 2011, "Sedan", "Gray", 17555, 55060));
+car_list.push(new Car(1002, "Volvo", "s40", 2013, "Sedan", "Black", 15575, 20350));
+car_list.push(new Car(1251, "Toyota", "Sienna", 2008, "Minivan", "Gray", 15775, 70000));
+
+let selectedItems = [];
+// Display car list
+let outputStr = "";
+for (let i=0; i<car_list.length; i++){
+	outputStr += "<tr class='car-item' id='l-"+i+"' >" ;
+	outputStr += "<td>" + car_list[i].stockid + "</td><td>" + car_list[i].make + "</td>";
+	outputStr += "<td>" + car_list[i].model + "</td><td>" + car_list[i].year + "</td><td>" + car_list[i].type + "</td>";
+	outputStr += "<td>" + car_list[i].color + "</td><td> $" + car_list[i].price + "</td>";
+	outputStr += "<td>" + car_list[i].mileage + "</td>";
+	outputStr += "<td><button type='button'   class='btn btn-primary' ";
+	outputStr +=  " onclick=\"addToCart(" + i + ")\">Add</button></td></tr>";
+}
+document.querySelector("#car-list").innerHTML = outputStr;
+
+function addToCart(index) {
+	console.log(index);
+}
+
+function displayDetails(index) {
+/* Step 1:  Define the id of the selected checkbox
+	The index is the array-index of the corresponding element in the ticket_list array.
+	ticket_list[index] is the corresponding element (seat).
+	ticket_list[index].type is the ticket type;
+  */
+  const seat = ticket_list[index];
+  const type = ticket_list[index].type;
+  const cost = ticket_list[index].cost;
+  /* If the type = A, then the id attribute of the corresponding checkbox is "r-A".
+     If the type = B, then the id attribute of the corresponding checkbox is "r-B",  etc.
+  */
+  const id = "#r-" + type;
+  // If the checkbox is checked then display the cost and type of teh selected ticket
+  if (document.querySelector(id).checked) {
+       const msg = "You have selected type " + type + " seat for $" + cost;
+	   alert(msg);
+  }
+}
+
+function displayTotal() {
+	/* Use a for loop to loop through the  ticket_list array.
+	If the corresponding checkbox is checked, then add it to the total ans record the type of the seat.
+	*/
+	let total = 0;
+	let list = "";
+	const max = ticket_list.length;
+	for (let index = 0; index < max; index++) {
+		// Read the seat information
+		const seat = ticket_list[index];
+		const type = ticket_list[index].type; 
+		// Define id of each checkboxes
+		const id = "#r-" + type;
+		// If the checkbox is checked then read type of the selected ticket
+		if (document.querySelector(id).checked) {
+			total++;
+			list += type + " ";
+		}
+	}
+	if (total > 0) {
+		alert("You have selected " + total + " ticket types: " + list);
+	} else {
+		alert("You have not selected any seats yet!");
+	}
+}
+
+function addToCart(index) {
+	selectedItems.push(index);
+	displayCart();
+}
+
+function displayCart() {
+	let output = "";
+	const max = selectedItems.length;
+	for (let i=0; i < max; i++){
+		// For each i, read the array index and then identify the corresponding  car
+		const index = selectedItems[i];
+		const car = car_list[index];
+		output += "<tr class='car-item' id='l-"+i+"' >" ;
+		output += "<td>" + car.make + "</td>";
+		output += "<td>" + car.model + "</td><td> $" + car.price + "</td></tr>";
+	}
+	document.querySelector("#mycart").innerHTML = output;
+}
+</script>
+
+</body></html>
