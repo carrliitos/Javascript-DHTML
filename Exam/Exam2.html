@@ -475,11 +475,15 @@ const selectedItems = [];
 		registrationFee = (0.05 * subtotal);
 		totalDue = subtotal + taxes + registrationFee;
 
-		document.querySelector("#total-items").innerHTML = totalCars;
-		document.querySelector("#sub-total").innerHTML = "$" + subtotal.toFixed(2);
-		document.querySelector("#taxes").innerHTML = "$" + taxes.toFixed(2);
-		document.querySelector("#registration").innerHTML = "$" + registrationFee.toFixed(2);
-		document.querySelector("#total").innerHTML = "$" + totalDue.toFixed(2);
+		if(totalDue > 0) {
+			document.querySelector("#total-items").innerHTML = totalCars;
+			document.querySelector("#sub-total").innerHTML = "$" + subtotal.toFixed(2);
+			document.querySelector("#taxes").innerHTML = "$" + taxes.toFixed(2);
+			document.querySelector("#registration").innerHTML = "$" + registrationFee.toFixed(2);
+			document.querySelector("#total").innerHTML = "$" + totalDue.toFixed(2);		
+		}else {
+			alert("Your shopping cart is empty!");
+		}
 
 	}
 
