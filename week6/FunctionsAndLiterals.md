@@ -16,5 +16,13 @@
 
 	`const message = `Please enter a password that
 		has at least 8 characters and 
-		include a capital letter`;
-	console.log(message);`
+		include a capital letter`;`
+	`console.log(message);`
+
+- **Fat Arrow Functions (=>)**
+	- They are shorthand for writing functions
+	- Example:
+
+		const sum = function(arg1, arg2) {
+			return arg1 + arg2;
+		}
