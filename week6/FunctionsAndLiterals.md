@@ -49,9 +49,7 @@
 	
 	<code>
 		const sum = (arg1, arg2) => {
-
 			return arg1 + arg2;
-		
 		}
 	</code>
 
@@ -65,8 +63,6 @@
 	
 	<code>
 		data.forEach((line) => {
-
 			console.log(line);
-	
 		});	
 	</code>
