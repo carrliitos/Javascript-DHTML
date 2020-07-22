@@ -21,10 +21,12 @@
 	- You can use backticks to write multi-line strings without the need to concatenate them
 	- Example:
 
-	`const message = ``Please enter a password that
+	<code>
+		const message = ``Please enter a password that
 			has at least 8 characters and 
 			include a capital letter``;
-	console.log(message);`
+		console.log(message);
+	</code>
 
 - **Fat Arrow Functions (=>)**
 	- They are shorthand for writing functions
