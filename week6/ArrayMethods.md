@@ -13,15 +13,19 @@
 	- It creates a new array with the results of calling a provided function on every element in the calling array.
 
 		<code>
+		
 			const newArray = oldArray.map(function(item) {
 				// return modified item to newArray
 			});
+		
 		</code>
 		<p>or</p>
 		<code>
+		
 			const newArray = oldArray.map(item => {
 				// return modified item to newArray
 			});
+		
 		</code>
 
 - **filter()**
@@ -29,8 +33,10 @@
 	- It creates a new array with all elements that pass the test implemented by the provided function.
 
 		<code>
+
 			const newArray = oldArray.filter(item => {
 				// Test each element using a given condition
 				// Returning true keeps the element
 			});
+		
 		</code>
