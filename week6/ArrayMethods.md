@@ -8,3 +8,17 @@
 	- Returns the *index* of the first element in the array ***that satisfies the provided testing function***. Otherwise, returns -1, indicating that no element passed the test.
 - **forEach()**
 	- A method that executes a provided function once for each array element.
+- **map()**
+	- Allows us to perform the same operation on each of the elements in a given array.
+	- It creates a new array with the results of calling a provided function on every element in the calling array
+		<code>
+			const newArray = oldArray.map(function(item) {
+				// return modified item to newArray
+			});
+		</code>
+		<p>or</p>
+		<code>
+			const newArray = oldArray.map(item => {
+				// return modified item to newArray
+			});
+		</code>
