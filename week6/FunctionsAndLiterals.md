@@ -3,5 +3,6 @@
 	- A feature that allows you to work with string literals
 	Example:
 	
-	`const customer - "Foo Bar";
-	console.log(``Hello ${customer}``)`
+	`const customer = "Foo Bar";`
+	
+	`console.log(``Hello ${customer}``)`
