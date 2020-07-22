@@ -49,6 +49,24 @@
 	
 	<code>
 		const sum = (arg1, arg2) => {
+
 			return arg1 + arg2;
+		
 		}
+	</code>
+
+	- Another example: Suppose we wish to display each element of the following array:
+	
+	<code>
+		const data = ["Sam Walton", "Bill Gates", "Warren Buffet"];
+	</code>
+
+	- We could either use a loop, **forEach() method**, or we can use the fat arrow:
+	
+	<code>
+		data.forEach((line) => {
+
+			console.log(line);
+	
+		});	
 	</code>
