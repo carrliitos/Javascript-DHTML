@@ -31,17 +31,22 @@
 - **Fat Arrow Functions (=>)**
 	- They are shorthand for writing functions
 	- Example:
+	
 	<code>
 		const sum = function(arg1, arg2) {
 			return arg1 + arg2;
 		}
 	</code>
+	
 	- *Arrow function expression* is an alternative to a regular function expression
 	- Example:
+
 	<code>
 		(arg1, arg2, arg3, ..., argN) => {statements}
 	</code>
+
 	- Using **=>**, we can define the sum as:
+	
 	<code>
 		const sum = (arg1, arg2) => {
 			return arg1 + arg2;
