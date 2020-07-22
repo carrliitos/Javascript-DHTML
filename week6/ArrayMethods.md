@@ -12,13 +12,10 @@
 	- Allows us to perform the same operation on each of the elements in a given array.
 	- It creates a new array with the results of calling a provided function on every element in the calling array.
 
-		<code>
-		
-			const newArray = oldArray.map(function(item) {
+		<code>const newArray = oldArray.map(function(item) {
 				// return modified item to newArray
-			});
-		
-		</code>
+			});</code>
+
 		<p>or</p>
 		<code>
 		
