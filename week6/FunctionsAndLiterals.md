@@ -3,10 +3,18 @@
 	- A feature that allows you to work with string literals
 	- Example:
 	
-	`const customer = "Foo Bar";`
-	`console.log(``Hello ${customer}``)`
+	<code>
+		const customer = "Foo Bar";
+		console.log(`Hello ${customer}`);
+
+		function getCustomer() {
+			return "Foo Bar";
+		}
+
+		console.log(`Hello ${getCustomer()}`);
+	</code>
 	
-	- The output of this code is: Hello {customer} (whatever the function of the customer is)
+	- The output of this code is: Hello Foo Bar.
 
 - **Multi-line Strings**
 	- String can span multiple lines in your code.
