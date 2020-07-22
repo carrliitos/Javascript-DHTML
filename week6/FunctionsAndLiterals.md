@@ -4,7 +4,7 @@
 	- Example:
 	
 	`const customer = "Foo Bar";`
-	`console.log((`)Hello ${customer}(`))`
+	`console.log(``Hello ${customer}``)`
 	
 	- The output of this code is: Hello {customer} (whatever the function of the customer is)
 
@@ -13,9 +13,9 @@
 	- You can use backticks to write multi-line strings without the need to concatenate them
 	- Example:
 
-	`const message = (`)Please enter a password that
+	`const message = ``Please enter a password that
 			has at least 8 characters and 
-			include a capital letter(`);
+			include a capital letter``;
 	console.log(message);`
 
 - **Fat Arrow Functions (=>)**
