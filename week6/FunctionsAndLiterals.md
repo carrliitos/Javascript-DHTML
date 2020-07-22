@@ -2,8 +2,10 @@
 - **String interpolation**
 	- A feature that allows you to work with string literals
 	Example:
+
 const customer = "Foo Bar";
 console.log(`Hello ${customer}`)
+	
 	- The output of this code is: Hello {customer} (whatever the function of the customer is)
 
 - **Multi-line Strings**
@@ -19,6 +21,7 @@ console.log(message);
 - **Fat Arrow Functions (=>)**
 	- They are shorthand for writing functions
 	- Example:
+
 const sum = function(arg1, arg2) {
 	return arg1 + arg2;
 }
