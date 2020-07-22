@@ -44,6 +44,7 @@
 - **reduce()**
 	- Used to apply a function to each element in the array to reduce the array to a single value.
 	- It executes a function (that you provide) on each member of the array resulting in a single output variable.
+	
 		<code>const newValue = oldArray.reduce(callback, initial value);</code>
 
 *Note: map(), filter(), and reduce() are chainable.*
