@@ -12,10 +12,13 @@
 	- Allows us to perform the same operation on each of the elements in a given array.
 	- It creates a new array with the results of calling a provided function on every element in the calling array.
 
-		<code>const newArray = oldArray.map(function(item) {
+		<code>
+		
+			const newArray = oldArray.map(function(item) {
 				// return modified item to newArray
-			});</code>
-
+			});
+		
+		</code>
 		<p>or</p>
 		<code>
 		
@@ -37,3 +40,10 @@
 			});
 		
 		</code>
+
+- **reduce()**
+	- Used to apply a function to each element in the array to reduce the array to a single value.
+	- It executes a function (that you provide) on each member of the array resulting in a single output variable.
+		<code>const newValue = oldArray.reduce(callback, initial value);</code>
+
+*Note: map(), filter(), and reduce() are chainable.*
