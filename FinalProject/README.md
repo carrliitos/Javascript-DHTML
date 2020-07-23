@@ -18,4 +18,4 @@ Add a filter mechanism to filter courses based on the following categories:
 - [x] Display an appropriate message if the shopping cart is empty.
 - [x] Display error messages if the selected course is already in the shopping cart.
 
-The JSON courses are located [here](https://github.com/carrliitos/Javascript-DHTML/blob/master/FinalProject/index.js#L1)
+The JSON courses are embedded into the JavaScript code and are located [here](https://github.com/carrliitos/Javascript-DHTML/blob/master/FinalProject/index.js#L1)
