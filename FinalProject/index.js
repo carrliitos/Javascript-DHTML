@@ -168,10 +168,8 @@ displayCoursesList();
 function displayCoursesList() {
 	let output = "";
 	const max = courses.length;
-
 	for(let index = 0; index < max; index++) {
 		const course = courses[index];
-
 		output += "<tr><td id=\"ch-" + (index + 1) + "-subject\" >" + course.subject + "</td>";
 		output += "<td id=\"ch-" + (index + 1) + "-courseID\" >" + course.courseid + "</td>";
 		output += "<td id=\"ch-" + (index + 1) + "-title\" >" + course.title + "</td>";
@@ -180,7 +178,6 @@ function displayCoursesList() {
 		output += "<td><button type=\"button\" class=\"btn btn-primary\" class=\"add-btn\" onclick=\"addItemToCart(" + index + ")\" >Add to cart</button></td>";
 		output += "</tr>";
 	}
-
 	document.querySelector("#courseList").innerHTML = output;
 }
 
@@ -221,7 +218,6 @@ function displayShoppingCart() {
 		itemInfo += "<td>" + course.credits + "</td>";
 		itemInfo += "<td><button class=\"btn btn-danger\" type=\"button\" onclick=\"deleteItem(" + arrayIndex + ")\">Remove</button></td></tr>"; 
 		totalCredits += parseInt(credits);
-	
 	}
 
 	document.querySelector(".cartItems").innerHTML = itemInfo;

@@ -5,6 +5,11 @@ table.mainTable, .shoppingcart {
 	text-align: center;
 	border-collapse: collapse;
 }
+img {
+	border-radius: 8px;
+	height: 50px;
+	width: : 50px;
+}
 table.mainTable td, table.mainTable th, .shoppingcart {
 	border: 1px solid #AAAAAA;
 	padding: 3px 2px;
