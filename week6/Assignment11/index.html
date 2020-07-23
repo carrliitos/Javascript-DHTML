@@ -1,0 +1,80 @@
+<!-- Benzon Carlitos Salazar 
+	CS381 - Assignment 10 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Online Shop</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body class="container-fluid">
+	<form name="testForm">
+		<div class="row">
+			<div class="col">
+				<h2>Sam's Online Shop</h2>
+				<h3>15% discount on all online sales</h3>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Product List -->
+			<div class="col-sm-8">
+				<h3>Product List</h3>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Product</th>
+							<th>Type</th>
+							<th>Price ($)</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody id="product-list"></tbody>
+				</table>
+			</div>
+
+			<!-- Shopping Cart -->
+			<div class="col-sm-4">
+				<div id="shoppingcart" style="visibility: hidden;">
+					<h3>Shopping Cart</h3>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Price ($)</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody class="cart-items"></tbody>
+					</table>
+					<p class="cart-total"></p>
+					<h4>Summary</h4>
+					<table class="table">
+						<tr>
+							<td>Subtotal</td>
+							<td><span class="subtotal">0</span></td>
+						</tr>
+						<tr>
+							<td>5% Sales Tax</td>
+							<td><span class="tax">0</span></td>
+						</tr>
+						<tr>
+							<td>Total + Tax</td>
+							<td><span class="total">0</span></td>
+						</tr>
+						<tr>
+							<td>Final Amount (With 20% discount)</td>
+							<td><span class="final">0</span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	
+		<script type="text/javascript" src="./products.js"></script>
+
+	</form>
+</body>
+</html>
