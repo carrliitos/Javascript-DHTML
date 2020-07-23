@@ -7,14 +7,13 @@ Add a filter mechanism to filter courses based on the following categories:
 - 300 or above courses
 
 ## TODO:
-- [ ] Use a table to display courses list
-- [ ] Add a link/checkbox/button to each courses to select/plan for next semester
-- [ ] Use a table to display selected/planned courses (similar to a shopping cart).
-	- [ ] Add a button/link to remove courses from the cart.
-- [ ] Display total 
-credits selected/planned for the next semester.
-- [ ] Display an appropriate message if the shopping cart is empty.
-- [ ] Display error messages if the selected course is already in the shopping cart.
+- [x] Use a table to display courses list
+- [x] Add a link/checkbox/button to each courses to select/plan for next semester
+- [x] Use a table to display selected/planned courses (similar to a shopping cart).
+	- [x] Add a button/link to remove courses from the cart.
+- [x] Display total credits selected/planned for the next semester.
+- [x] Display an appropriate message if the shopping cart is empty.
+- [x] Display error messages if the selected course is already in the shopping cart.
 
 The JSON courses:
 

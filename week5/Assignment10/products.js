@@ -134,7 +134,7 @@ const products = [
 	}
 ];
 
-// Define an array to store selected item's arra-index
+// Define an array to store selected item's array-index
 let selectedItems = [];
 // Display products list
 displayProductList();
@@ -211,7 +211,7 @@ function displayShoppingCart() {
 	}
 	let itemInfo = "";
 	for (let i = 0; i < max; i++) {
-	const arrayIndex = selectedItems[i];
+		const arrayIndex = selectedItems[i];
 		const item = products[arrayIndex];
 		const itemPrice = parseFloat(item.price);
 		itemInfo += "<tr><td>" + item.name + "</td>";
@@ -227,30 +227,30 @@ function displayShoppingCart() {
 
 function displayResult(){
 	if (selectedItems.length > 0) {
-	 let total = 0;
-	 let subtotal = 0;
-	 const max = selectedItems.length;
-	 for (let i=0; i < max; i++){
-	 // Read array-index of each selected item
-		const item = selectedItems[i];
-		// Identify the corresponding product in the products array
-		const product = products[item];
-		// Use the selected item, which is an object, to calculate subtotal
-		subtotal +=   product.price;
-	 }
-	
-	// Calculate taxes
-	const taxes = subtotal*0.05;
-	
-	// Calculate the final amount
-	const final_amount = (subtotal + taxes)*0.80;
-	
-	
-	// Display result
-	document.querySelector('.subtotal').textContent = "$" + subtotal.toFixed(2);
-	document.querySelector('.tax').textContent = "$" + taxes.toFixed(2);
-	document.querySelector('.total').textContent = "$" + (subtotal + taxes).toFixed(2);
-	document.querySelector('.final').textContent = "$" + final_amount.toFixed(2);
+		let total = 0;
+		let subtotal = 0;
+		const max = selectedItems.length;
+		for (let i=0; i < max; i++){
+		// Read array-index of each selected item
+			const item = selectedItems[i];
+			// Identify the corresponding product in the products array
+			const product = products[item];
+			// Use the selected item, which is an object, to calculate subtotal
+			subtotal +=   product.price;
+		}
+		
+		// Calculate taxes
+		const taxes = subtotal*0.05;
+		
+		// Calculate the final amount
+		const final_amount = (subtotal + taxes)*0.80;
+		
+		
+		// Display result
+		document.querySelector('.subtotal').textContent = "$" + subtotal.toFixed(2);
+		document.querySelector('.tax').textContent = "$" + taxes.toFixed(2);
+		document.querySelector('.total').textContent = "$" + (subtotal + taxes).toFixed(2);
+		document.querySelector('.final').textContent = "$" + final_amount.toFixed(2);
 	}
 }
 
