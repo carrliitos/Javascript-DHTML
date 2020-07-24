@@ -20,10 +20,24 @@
 - We'll use [Chart.js](https://www.chartjs.org/) to visualize our table with a line graph.
 ![Sample Graph](https://github.com/carrliitos/Javascript-DHTML/blob/master/Misc/WorkingWithData/Part2/SampleGraph.png)
 
-# Working with Exteranl APIs
+# Working with External APIs and JSON
 - Application Programming Interface
 	- These interface concepts are similar to the interfaces we write in Java.
-- For the purpose of this "learning", we'll only be working with using the fetch() method and dealing with URLs
-- For data, we'll be working with [Real-time ISS location](https://wheretheiss.at/), which is a website for for tracking the location of and getting fly-over notifications for the **Internation Space Station**.
-- For this project, we want to figure out the Latitude and Longitude of the ISS, and also to be able to map those coordinates.
-	- To accomplish the second task, we will be using the [Leaflet](https://www.leafletjs.com) library, which is *"an open-source JavaScript library for mobile-friendly interactive maps"*.
+	- For the purpose of this "learning", we'll only be working with using the fetch() method and dealing with URLs
+	- For data, we'll be working with [Real-time ISS location](https://wheretheiss.at/), which is a website for for tracking the location of and getting fly-over notifications for the **Internation Space Station**.
+	- For this project, we want to figure out the Latitude and Longitude of the ISS, and also to be able to map those coordinates.
+		- To accomplish the second task, we will be using the [Leaflet](https://www.leafletjs.com) library, which is *"an open-source JavaScript library for mobile-friendly interactive maps"*.
+- JSON (JavaScript Object Notation)
+	- We've been working with JSON files, but we've only worked with when they're embedded in our code, instead of a separate file.
+
+	<code>
+		
+		let pos = {
+			longitude: -45,
+			latitude: 100
+		}
+		console.log(pos);		
+
+	</code>
+
+	- Fundamentally, it is data, written as objects in JavaScript syntax.
