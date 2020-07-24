@@ -30,14 +30,12 @@
 - JSON (JavaScript Object Notation)
 	- We've been working with JSON files, but we've only worked with when they're embedded in our code, instead of a separate file.
 
-	<code>
-		
+	<code>		
 		let pos = {
 			longitude: -45,
 			latitude: 100
 		}
-		console.log(pos);		
-
+		console.log(pos);
 	</code>
 
 	- Fundamentally, it is data, written as objects in JavaScript syntax.
