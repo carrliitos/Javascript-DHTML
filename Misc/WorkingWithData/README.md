@@ -20,7 +20,7 @@
 - We'll use [Chart.js](https://www.chartjs.org/) to visualize our table with a line graph.
 ![Sample Graph](https://github.com/carrliitos/Javascript-DHTML/blob/master/Misc/WorkingWithData/Part2/SampleGraph.png)
 
-# Working with External APIs and JSON
+# Working with External APIs and JSON - [Part 3](https://github.com/carrliitos/Javascript-DHTML/tree/master/Misc/WorkingWithData/Part3)
 - Application Programming Interface
 	- These interface concepts are similar to the interfaces we write in Java.
 	- For the purpose of this "learning", we'll only be working with using the fetch() method and dealing with URLs
