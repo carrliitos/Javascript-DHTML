@@ -7,12 +7,26 @@
 	<title>Fetch JSON from API and map latitude and longitude</title>
 </head>
 <body>
+	<h1>Where is the ISS??</h1>
+	<p>Latitude: <span id="lat"></span></p>
+	<p>Longitude: <span id="long"></span></p>
+
 	<script type="text/javascript">
-		let pos = {
-			longitude: -45,
-			latitude: 100
+		const apiURL = "https://api.wheretheiss.at/v1/satellites/25544";
+
+		async function getISS() {
+			const response = await fetch(apiURL);
+			const data = await response.json();
+			console.log(data.latitude);
+			console.log(data.longitude);
+			
+			const {latitude, longitude} = data;
+			
+			document.querySelector("#lat").textContent = latitude;
+			document.querySelector("#long").textContent = longitude;
 		}
-		console.log(pos);
+
+		getISS();
 	</script>
 </body>
 </html>

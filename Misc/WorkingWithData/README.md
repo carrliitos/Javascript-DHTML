@@ -25,8 +25,18 @@
 	- These interface concepts are similar to the interfaces we write in Java.
 	- For the purpose of this "learning", we'll only be working with using the fetch() method and dealing with URLs
 	- For data, we'll be working with [Real-time ISS location](https://wheretheiss.at/), which is a website for for tracking the location of and getting fly-over notifications for the **Internation Space Station**.
+	- The API is accessible [here](https://wheretheiss.at/w/developer).
 	- For this project, we want to figure out the Latitude and Longitude of the ISS, and also to be able to map those coordinates.
 		- To accomplish the second task, we will be using the [Leaflet](https://www.leafletjs.com) library, which is *"an open-source JavaScript library for mobile-friendly interactive maps"*.
+	- Things to look for when working with APIs:
+		1. What is the **authentication** requirement?
+		2. What is the **rate limit**?
+			- How many requests can we do per second?
+		3. Some other information on **Responses**.
+		4. What are the **Endpoints**?
+			- These describes the path, the URL path, that you can request a certain bit of data from.
+			- Certain APIs will have different Endpoints.
+			- Important to check the examples for what the endpoints should look like.
 - JSON (JavaScript Object Notation)
 	- We've been working with JSON files, but we've only worked with when they're embedded in our code, instead of a separate file.
 	<code>	
@@ -36,12 +46,7 @@
 			latitude: 100
 		}
 		console.log(pos);
+	
 	</code>
 
-	`
-		let pos = {
-			long: -122,
-			lat: 1233
-		}
-	`
 	- Fundamentally, it is data, written as objects in JavaScript syntax.
