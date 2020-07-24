@@ -37,4 +37,11 @@
 		}
 		console.log(pos);
 	</code>
+
+	`
+		let pos = {
+			long: -122,
+			lat: 1233
+		}
+	`
 	- Fundamentally, it is data, written as objects in JavaScript syntax.
