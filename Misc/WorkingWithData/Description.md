@@ -1,5 +1,4 @@
 # Working with Data
-
 - The fetch() function returns a "PROMISE"
 	- A "PROMISE" is a way in JavaScript to handle any synchronous event, it gets resolved when the event is over.
 	- we can use the method .then(), which is a method that can handle this response
@@ -15,3 +14,6 @@
 			</code>
 
 	- Basically, we're saying, "await the result of fetch, and store that result in this variable called response."
+
+## Working with Tabular Data (CSVs)
+- We'll be working with [Nasa's Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies (Land-Ocean Temperature Index, LOTI)](https://data.giss.nasa.gov/gistemp/)
