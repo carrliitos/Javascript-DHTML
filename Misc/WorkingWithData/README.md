@@ -29,13 +29,12 @@
 		- To accomplish the second task, we will be using the [Leaflet](https://www.leafletjs.com) library, which is *"an open-source JavaScript library for mobile-friendly interactive maps"*.
 - JSON (JavaScript Object Notation)
 	- We've been working with JSON files, but we've only worked with when they're embedded in our code, instead of a separate file.
-
-	<code>		
+	<code>	
+	
 		let pos = {
 			longitude: -45,
 			latitude: 100
 		}
 		console.log(pos);
 	</code>
-
 	- Fundamentally, it is data, written as objects in JavaScript syntax.
