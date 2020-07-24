@@ -18,3 +18,4 @@
 ## Working with Tabular Data (CSVs) - [Part 2](https://github.com/carrliitos/Javascript-DHTML/tree/master/Misc/WorkingWithData/Part2)
 - We'll be working with [Nasa's Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies (Land-Ocean Temperature Index, LOTI)](https://data.giss.nasa.gov/gistemp/)
 - We'll use [Chart.js](https://www.chartjs.org/) to visualize our table with a line graph.
+![Sample Graph](https://github.com/carrliitos/Javascript-DHTML/blob/master/Misc/WorkingWithData/Part2/SampleGraph.png)
