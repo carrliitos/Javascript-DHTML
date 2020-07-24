@@ -1,0 +1,44 @@
+<!-- @author Benzon Carlitos Salazar -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Data/APIs 1</title>
+</head>
+<body>
+	<img src="" id="tree">
+	<script>
+		console.log("About to fetch a tree!!");
+
+		catchTree()
+			.then(response => {
+				console.log("Tree has been fetched!");
+			});
+
+		catchTree().catch(error => {
+			console.log("An error has occured");
+			console.error(error);
+		});
+
+		async function catchTree() {
+			const response = await fetch("TreeStructure.png");
+			const blob = await response.blob();
+			document.getElementById("tree").src = URL.createObjectURL(blob);
+		}
+
+		// fetch("TreeStructure.png").then(response => {
+		// 	console.log(response);
+		// 	return response.blob();
+		// }).then(blob => {
+		// 	console.log(blob);
+		// 	document.getElementById("tree").src = URL.createObjectURL(blob);
+		// }).catch(error => {
+		// 	console.log("Error!");
+		// 	console.error(error);
+		// });
+	</script>
+</body>
+</html>

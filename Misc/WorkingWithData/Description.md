@@ -1,0 +1,17 @@
+# Working with Data
+
+- The fetch() function returns a "PROMISE"
+	- A "PROMISE" is a way in JavaScript to handle any synchronous event, it gets resolved when the event is over.
+	- we can use the method .then(), which is a method that can handle this response
+- catch() method allows us to catch errors (similar to try-catch-finally method in JAVA).
+- Async/await allows us to condense our code into a more read-able code.
+	- We can only use the keyword <code>await</code> in the context of an asynchronous function
+		- Example:
+		
+			<code>
+					async function catchTree() {
+						const response = await fetch("TreeStructure.png");
+					}
+			</code>
+
+	- Basically, we're saying, "await the result of fetch, and store that result in this variable called response."
