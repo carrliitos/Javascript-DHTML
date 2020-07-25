@@ -9,6 +9,9 @@ Add a filter mechanism to filter courses based on the following categories:
 - Unique courses
 - 300 or above courses
 
+*With the warning*
+![warning image](https://github.com/carrliitos/Javascript-DHTML/blob/master/FinalProject/images/warning.png)
+
 ## TODO:
 - [x] Add a filter system, to filter courses based on the following:
 	- Core courses
