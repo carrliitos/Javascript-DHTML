@@ -1,5 +1,6 @@
 courses = [
 	{
+		id: 0,
 		subject: "CompSci", 
 		courseid: 172, 
 		title: "Intro to Java",
@@ -7,6 +8,7 @@ courses = [
 		category: "core" 
 	},
 	{
+		id: 1,
 		subject: "CompSci", 
 		courseid: 174, 
 		title: "Intro to C++", 
@@ -14,6 +16,7 @@ courses = [
 		category: "core"
 	},
 	{
+		id: 2,
 		subject: "CompSci", 
 		courseid: 215, 
 		title: "Discrete Structures", 
@@ -21,6 +24,7 @@ courses = [
 		category: "unique"
 	},
 	{ 
+		id: 3,
 		subject: "CompSci", 
 		courseid: 220, 
 		title: "Intermediate Java", 
@@ -28,6 +32,7 @@ courses = [
 		category: "core"
 	},
 	{ 
+		id: 4,
 		subject: "CompSci", 
 		courseid: 222, 
 		title: "Intermediate C++", 
@@ -35,6 +40,7 @@ courses = [
 		category: "core"
 	},
 	{ 
+		id: 5,
 		subject: "CompSci", 
 		courseid: 223, 
 		title: "Data Structures", 
@@ -42,6 +48,7 @@ courses = [
 		category: "core"
 	},
 	{ 
+		id: 6,
 		subject: "CompSci", 
 		courseid: 271, 
 		title: "Assembly Programming", 
@@ -49,6 +56,7 @@ courses = [
 		category: "core"
 	},
 	{ 
+		id: 7,
 		subject: "CompSci", 
 		courseid: 310, 
 		title: "Intermediate Data Science", 
@@ -56,6 +64,7 @@ courses = [
 		category: "elective"
 	},
 	{ 
+		id: 8,
 		subject: "CompSci", 
 		courseid: 332, 
 		title: "Intro to AI", 
@@ -63,6 +72,7 @@ courses = [
 		category: "elective"
 	},
 	{ 
+		id: 9,
 		subject: "CompSci", 
 		courseid: 366, 
 		title: "Database Management Systems", 
@@ -70,6 +80,7 @@ courses = [
 		category: "core"
 	},
 	{ 
+		id: 10,
 		subject: "CompSci", 
 		courseid: 381, 
 		title: "Javascript", 
@@ -77,6 +88,7 @@ courses = [
 		category: "elective"
 	},
 	{ 
+		id: 11,
 		subject: "CompSci", 
 		courseid: 382, 
 		title: "Server-side Scripting", 
@@ -84,6 +96,7 @@ courses = [
 		category: "elective"
 	},
 	{ 
+		id: 12,
 		subject: "CompSci", 
 		courseid: 433, 
 		title: "Theory of Algorithms", 
@@ -91,6 +104,7 @@ courses = [
 		category: "core"
 	},
 	{ 
+		id: 13,
 		subject: "CompSci", 
 		courseid: 476, 
 		title: "Software Engineering", 
@@ -98,6 +112,7 @@ courses = [
 		category: "core"
 	},
 	{ 
+		id: 14,
 		subject: "CompSci", 
 		courseid: 481, 
 		title: "Unix System Administration", 
@@ -105,6 +120,7 @@ courses = [
 		category: "elective"
 	},
 	{ 
+		id: 15,
 		subject: "CompSci", 
 		courseid: 482, 
 		title: "Advanced Web Application Development ", 
@@ -112,6 +128,7 @@ courses = [
 		category: "elective"
 	},
 	{ 
+		id: 16,
 		subject: "Math", 
 		courseid: 250, 
 		title: "Business Calculus", 
@@ -119,6 +136,7 @@ courses = [
 		category: "unique"
 	},
 	{ 
+		id: 17,
 		subject: "Math", 
 		courseid: 253, 
 		title: "Calculus I", 
@@ -126,6 +144,7 @@ courses = [
 		category: "unique"
 	},
 	{ 
+		id: 18,
 		subject: "Math", 
 		courseid: 280, 
 		title: "Discrete Mathematics", 
@@ -133,6 +152,7 @@ courses = [
 		category: "unique"
 	},
 	{ 
+		id: 19,
 		subject: "Math", 
 		courseid: 342, 
 		title: "Statistics", 
@@ -140,6 +160,7 @@ courses = [
 		category: "elective"
 	},
 	{ 
+		id: 20,
 		subject: "Math", 
 		courseid: 347, 
 		title: "Scientific Computing", 
@@ -147,6 +168,7 @@ courses = [
 		category: "elective"
 	},
 	{ 
+		id: 21,
 		subject: "Math", 
 		courseid: 355, 
 		title: "Linear Algebra", 
@@ -154,6 +176,7 @@ courses = [
 		category: "elective"
 	},
 	{ 
+		id: 22,
 		subject: "Math", 
 		courseid: 471, 
 		title: "Numerical Analysis", 
@@ -166,26 +189,43 @@ let selectedItems = [];
 displayCoursesList();
 
 function displayCoursesList() {
-	let output = "";
-	const max = courses.length;
-	for(let index = 0; index < max; index++) {
-		const course = courses[index];
-		output += "<tr><td id=\"ch-" + (index + 1) + "-subject\" >" + course.subject + "</td>";
-		output += "<td id=\"ch-" + (index + 1) + "-courseID\" >" + course.courseid + "</td>";
-		output += "<td id=\"ch-" + (index + 1) + "-title\" >" + course.title + "</td>";
-		output += "<td id=\"ch-" + (index + 1) + "-credits\" >" + course.credits + "</td>";
-		output += "<td id=\"ch-" + (index + 1) + "-category\" >" + course.category + "</td>";
-		output += "<td><button type=\"button\" class=\"btn btn-primary\" class=\"add-btn\" onclick=\"addItemToCart(" + index + ")\" >Add to cart</button></td>";
-		output += "</tr>";
+	let courseInfo = "";
+	const category = document.querySelector('#category').value;
+
+	if(category === "All") {
+		courses.forEach(course => courseInfo += createCourseInfo(course));
+	}else if(category === "coreCourses") {
+		courses.filter(course => course.category === "core").forEach(core => courseInfo += createCourseInfo(core));
+	}else if(category === "electiveCourses") {
+		courses.filter(course => course.category === "elective").forEach(elective => courseInfo += createCourseInfo(elective));
+	}else if(category === "uniqueCourses") {
+		courses.filter(course => course.category === "unique").forEach(unique => courseInfo += createCourseInfo(unique));
+	}else if(category === "above300") {
+		courses.filter(course => course.courseid >= 300).forEach(above => courseInfo += createCourseInfo(above));
+	}else {
+		courses.forEach(course => courseInfo += createCourseInfo(course));
 	}
-	document.querySelector("#courseList").innerHTML = output;
+
+	document.querySelector('#courseList').innerHTML = courseInfo;
+}
+
+function createCourseInfo(course) {
+	let tableRow = "";
+	tableRow += `<tr><td>${course.subject}</td>
+				<td>${course.courseid}</td>
+				<td>${course.title}</td>
+				<td>${course.credits}</td>
+				<td>${course.category}</td>
+				<td><button type=\"button\" class=\"btn btn-primary\" class=\"add-btn\" onclick=\"addItemToCart(${course.id})\">Add to cart</button></td>
+				</tr>`;
+	return tableRow;
 }
 
 function addItemToCart(index) {
 	selectedItems.push(index);
 	for(let i = 0; i < selectedItems.length; i++) {
 		if(selectedItems[i] == selectedItems[i + 1]) {
-			alert("Class is already added to shopping cart");
+			alert("Course is already added to shopping cart.\nPlease select a different course to update your cart.");
 			selectedItems.pop(i + 1);
 		}else {
 			displayShoppingCart();

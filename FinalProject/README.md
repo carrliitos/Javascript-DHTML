@@ -10,6 +10,11 @@ Add a filter mechanism to filter courses based on the following categories:
 - 300 or above courses
 
 ## TODO:
+- [ ] Add a filter system, to filter courses based on the following:
+	- Core courses
+	- Elective courses
+	- Unique courses
+	- 300 or above courses
 - [x] Use a table to display courses list
 - [x] Add a link/checkbox/button to each courses to select/plan for next semester
 - [x] Use a table to display selected/planned courses (similar to a shopping cart).

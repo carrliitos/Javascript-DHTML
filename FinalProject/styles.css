@@ -48,3 +48,8 @@ table.mainTable tfoot .links a, .shoppingcart{
 	padding: 2px 8px;
 	border-radius: 5px;
 }
+.customSelect select {
+	position: relative;
+	font-family: "Times New Roman", Times, serif;
+	width: 200px;
+}
