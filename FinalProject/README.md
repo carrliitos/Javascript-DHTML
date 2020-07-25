@@ -1,6 +1,6 @@
 # Final Project
 
-![Sample image Homepage](https://github.com/carrliitos/Javascript-DHTML/blob/master/FinalProject/images/SampleWebpage.png)
+![Sample image Homepage](https://github.com/carrliitos/Javascript-DHTML/blob/master/FinalProject/images/WithFilter.png)
 
 Use the courses array of objects defined below to display a list of courses available for next semester.
 Add a filter mechanism to filter courses based on the following categories:
@@ -10,7 +10,7 @@ Add a filter mechanism to filter courses based on the following categories:
 - 300 or above courses
 
 ## TODO:
-- [ ] Add a filter system, to filter courses based on the following:
+- [x] Add a filter system, to filter courses based on the following:
 	- Core courses
 	- Elective courses
 	- Unique courses
