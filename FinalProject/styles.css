@@ -1,6 +1,6 @@
 table.mainTable, .shoppingcart {
 	font-family: "Times New Roman", Times, serif;
-	background-color: #EEEEEE;
+	background-color: white;
 	width: 100%;
 	text-align: center;
 	border-collapse: collapse;
@@ -17,9 +17,6 @@ table.mainTable td, table.mainTable th, .shoppingcart {
 table.mainTable tbody td, .shoppingcart {
 	font-size: 20px;
 	color: #000000;
-}
-table.mainTable tr:nth-child(even), .shoppingcart {
-	background: #D0E4F5;
 }
 table.mainTable thead, .shoppingcart {
 	background: #801ACD;
@@ -47,9 +44,4 @@ table.mainTable tfoot .links a, .shoppingcart{
 	color: #FFFFFF;
 	padding: 2px 8px;
 	border-radius: 5px;
-}
-.customSelect select {
-	position: relative;
-	font-family: "Times New Roman", Times, serif;
-	width: 200px;
 }

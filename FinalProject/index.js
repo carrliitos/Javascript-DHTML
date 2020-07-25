@@ -264,6 +264,11 @@ function displayShoppingCart() {
 	// Update total number of items selected
 	document.querySelector(".cartSummary").innerHTML = "<strong>Total classes selected:</strong> " + max;
 	document.querySelector("#totalCredits").innerHTML = "<strong>Total Credits:</strong> " + totalCredits;
+	if(totalCredits >= 18) {
+		document.querySelector("#warning").innerHTML = `<p>WARNING: You may not exceed 18 credits per semester 
+														unless you have received permission from the dean of your college.</p>
+														<p>For more information, <a href="https://www.uww.edu/aaec/faqs#ci_whatis" target="_blank">visit the FAQ!</a></p>`;
+	}
 	document.querySelector("#shoppingcart").style.visibility = 'visible';
 }
 
